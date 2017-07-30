@@ -21,6 +21,7 @@ body {
 	@include font;
 	max-width: 1920px;
 	margin: auto;
+	width: 100%;
 }
 main {
 	flex-grow: 1;

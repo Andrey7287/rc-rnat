@@ -1,58 +1,57 @@
 // Headers
 
 h1, .h1 {
-	@include font(48,52,400,$serif);
-	text-transform: uppercase;
+	@include font(36,40,300,$header-font);
 	text-align: center;
 	margin: 22px 0;
 	color: $header;
 	@include mq(lg){
-		@include font(46,50,400,$serif);
+		@include font(46,50,500,$header-font);
 		margin: 18px 0;
 	}
 	@include mq(md){
-		@include font(42,46,400,$serif);
+		@include font(42,46,500,$header-font);
 	}
 	@include mq(sm){
-		@include font(38,42,400,$serif);
+		@include font(38,42,500,$header-font);
 		margin: 10px 0;
 	}
 	@include mq(xs){
-		@include font(34,38,400,$serif);
+		@include font(34,38,500,$header-font);
 	}
 }
 h2, .h2 {
-	@include font(36,38,400,$serif);
+	@include font(36,38,300,$header-font);
 	text-transform: uppercase;
 	color: $header;
 	margin: 22px 0;
 	@include mq(md){
-		@include font(34,36,400,$serif);
+		@include font(34,36,300,$header-font);
 		margin: 18px 0;
 	}
 	@include mq(sm){
-		@include font(30,32,400,$serif);
+		@include font(30,32,300,$header-font);
 	}
 	@include mq(xs){
-		@include font(26,28,400,$serif);
+		@include font(26,28,300,$header-font);
 	}
 }
 h3, .h3 {
-	@include font(30,32,400,$serif);
+	@include font(30,32,300,$header-font);
 	text-transform: uppercase;
 	color: $header;
 	margin: 13px 0;
 	@include mq(md){
-		@include font(28,30,400,$serif);
+		@include font(28,30,300,$header-font);
 		margin: 8px 0;
 	}
 	@include mq(sm){
-		@include font(26,28,400,$serif);
+		@include font(26,28,300,$header-font);
 		margin: 6px 0;
 	}
 }
 h4, .h4 {
-	@include font(20,24,700,$serif);
+	@include font(20,24,700,$header-font);
 	text-transform: uppercase;
 	color: $header;
 	margin: 13px 0;
@@ -60,7 +59,7 @@ h4, .h4 {
 		br {display: none}
 	}
 	@include mq(sm){
-		@include font(18,22,400,$serif);
+		@include font(18,22,300,$header-font);
 		margin: 6px 0;
 	}
 }

@@ -9,53 +9,83 @@ html
     link(rel="shortcut icon", href="./favicon.ico")
   body
     header.header
-      .site-nav-outer
+      .top
         .container
-          nav.site-nav-inner
-            button.c-hamburger.c-hamburger--htx
-              span toggle menu
-            +menu({
-              0: {
-                href: '/',
-                title: 'О Компании'
-              },
-              1: {
-                href: '/inner1.html',
-                title: 'Название'
-              },     
-              2: {
-                href: '/inner2.html',
-                title: 'Название2',
-                sub: {
-                  0: {
-                    href: '#',
-                    title: 'в подменю'
-                  },
-                  1: {
-                    href: '#',
-                    title: 'в подменю 2'
-                  },
-                  2: {
-                    href: '#',
-                    title: 'в подменю 3',
-                    sub: {
-                      0: {
-                        href: '#',
-                        title: '3 уровень'
-                      },
-                      1: {
-                        href: '#',
-                        title: '3 уровень'
-                      }
-                    }
-                  }
+          .row
+            .col.top__item.site-logo 
+              img(src="./images/site-logo.png", alt="Логотип рус-нат")
+            .col.top__item
+              .search
+                form(action="/search/" method="get")
+                  input(type="text" name="q" placeholder="Поиск по сайту").search__input
+                  button(type="submit").search__submit.site-top__link.site-top__link_search поиск
+            .col.top__item
+              a(href="#", title="Личный кабинет").site-top__link.site-top__link_profile Личный кабинет
+            .col.top__item
+              a(href="#", title="Форум").site-top__link.site-top__link_forum Форум
+      .container.top-contacts  
+        .top-contacts__item
+          a(href="tel:+7(495)2121846") +7 (495) 212 18 46
+        .top-contacts__item
+          a(href="mailto:info@rnatt.ru") info@rnatt.ru
+      .container
+        nav
+          button.c-hamburger.c-hamburger--htx
+            span toggle menu
+          +menu({
+            0: {
+              href: '/',
+              title: 'Об Ассоциации',
+              sub: {
+                0: {
+                  href: '#',
+                  title: 'Миссия Ассоциации'
+                },
+                1: {
+                  href: '#',
+                  title: 'Правление'
+                },
+                2: {
+                  href: '#',
+                  title: 'Экспертный совет',
+                },
+                3: {
+                  href: '#',
+                  title: 'Аппарат'
+                },
+                4: {
+                  href: '#',
+                  title: 'Календарь мероприятий'
+                },
+                5: {
+                  href: '#',
+                  title: 'Контакты'
+                },
+                6: {
+                  href: '#',
+                  title: 'FAQ'
                 }
-              }     
-            }, 'site-nav')
+              }
+            },
+            1: {
+              href: '/inner1.html',
+              title: 'Медиа'
+            },     
+            2: {
+              href: '/inner2.html',
+              title: 'Направления деятельности'
+            },
+            3: {
+              href: '/inner3.html',
+              title: 'Партнеры',
+            }, 
+            4: {
+              href: '/inner3.html',
+              title: 'Контакты'
+            }
+          }, 'site-nav')
     main
       block content
     footer
       div.footer
         div.copyright= 'all right resived'
-
-        https://htmlforum.io/topic/57942-konvertirovat-png-v-svg-i-kak-pravilno-postavit/

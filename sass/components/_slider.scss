@@ -1,57 +1,57 @@
-
 .slider-wrapp {
-	position: relative;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	&_outer {
+		height: 529px;
+		background: url(../images/slider-bkg.png) 50% 0 no-repeat;
+		overflow: hidden;
+		.container {
+			height: 100%;
+		}
+	}
+	&_inner {
+		position: relative;
+		height: 100%;
+	}
+	
 }
+
 /**** SLIDER ****/
-.slider {
+$slider-image-offset: 390px;
+.slider {	
+	width: 1530px;
+	color: #fff;
 	&__item {
 		position: relative;
-		min-height: 435px;
-		@include mq(md) {
-			min-height: 380px;
+		height: 529px;
+		&::before {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: $slider-image-offset;
+			@include sprite($slider-overlay);
+			z-index: 4;
 		}
 	}
 	&__img {
 		position: absolute;
-		top:0;
-		right: 0;
-		bottom: 0;
-		left:0;
-		max-width: inherit;
-		margin: auto;
+		top: 0;
+		z-index: 2;
+		left: $slider-image-offset;
 	}
 	&__inner {
-		display: flex;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		flex-direction: column;
-		justify-content: center;
+		padding-top: 160px;
+		width: 360px;
 	}
-	&__txt {
-		color: #fff;
-		padding: 15px;
-		text-align: right;
-		.title {
-
-		}
-		.txt {
-
-		}
-	}
-
 }
 .slider-dots {
-	width: 40%;
 	position: absolute;
-	right: 0;
-	bottom: 60px;
-	@include mq(md) {
-		width: 50%;
-		bottom: 40px;
-	}
+	left: 0;
+	bottom: 10px;
 }
 /**** DOTS ****/
 .slick-dots {

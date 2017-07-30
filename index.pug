@@ -1,16 +1,54 @@
 extends layout 
 
 block content
+  .slider-wrapp_outer
+    .container
+      .slider-wrapp_inner
+        .slider-wrapp
+          .slider.js-slider-1
+            each val in [1,2]
+              .slider__item
+                .slider__inner
+                  .slider__title Комбинаторное приращение
+                  p.slider__txt Познание текста, особенно в условиях политической нестабильности, отражает сюжетный парафраз. Зенитное часовое число притягивает биокосный логарифм. 
+                  a(href="#").btn Подробнее
+                img(src="./images/slider"+val+".jpg", alt="").slider__img
+          //button.slider-arrow.js-slider-1-left previos
+          //button.slider-arrow.js-slider-1-right next
+          .slider-dots.js-slider-1-dots
+  .about
+    .h1  Об ассоциации
+    p Регрессия возможна. Эоловое засоление однородно ищет лимнический строфоид. Гировертикаль гасит pадиотелескоп Максвелла. Складчатость и надвигание свидетельствуют о том, что высота приводит каркасный стих. Движение систематически влияет на составляющие гироскопического момента больше, чем устойчивый ортоклаз в соответствии с системой уравнений. Ледниковое озеро, по которому один блок опускается относительно другого, текстологически связывает парагенезис, что связано со смысловыми оттенками, логическим выделением или с синтаксической омонимией. 
+    p текстологически связывает парагенезис, что связано со смысловыми оттенками, логическим выделением или с синтаксической омонимией. Эоловое засоление однородно ищет лимнический строфоид. Складчатость и надвигание свидетельствуют о том, что высота приводит каркасный стих. Движение систематически влияет на составляющие гироскопического момента больше, чем устойчивый ортоклаз в соответствии с системой уравнений. 
+    a.forward Подробнее
+  .directions
+    .container
+      .directions__title
+      .directions__item
+        a.directions__link(href="") коммерциализация<br />РИД
+      .directions__item
+        a.directions__link(href="") обзоры
+      .directions__item
+        a.directions__link(href="") Формирование <br />суверенных патентных фондов за рубежом
+      .directions__item
+        a.directions__link(href="") экспертиза <br />нормативных документов
+      .directions__item
+        a.directions__link(href="") подготовка <br />кадров
+  .news-block
+    .container
+      .row
+        .col.news-block__item
+          .h1 Новости трансфера технологий
+          .news.row
+            each block in [{title:'Бихевиоризм символ теоретический минерал',txt: 'Эпюра, несмотря на внешние воздействия, отражает словесный ксерофитный кустарник, для этого необходим заграничный паспорт, действительный.'},{title: 'Утконос понятен вне нового подхода', txt: 'Политическая культура применяет подпахотный коллапс и это является некими межсловесными отношениями другого типа, природу конкретизировать...'},{title: 'Важно геологическое строение дает гидроузел',txt: 'Не ставя под сомнение возможность разных подходов к почве, парарендзина начинает близкий бугор пучения, где автор является хозяином.'}]
+              .news__item.col
+                .news__title= block.title
+                .news__date 15 июня 2017
+                .news__txt= block.txt
+          a.forward
+        .col.news-block__item
+          .h1 Мероприятия
+          include ./includes/calendar.pug 
 
-  .container
-    .slider-wrapp
-      .slider.js-slider-1
-        each val in [1,2]
-          .slider__item
-            .slider__inner
-            img(src="./images/slider"+val+".jpg", alt="")
-      button.slider-arrow.js-slider-1-left previos
-      button.slider-arrow.js-slider-1-right next
-      .slider-dots.js-slider-1-dots
-  .test-block
-    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nam, ipsum animi, sit earum labore veniam harum ullam deserunt consectetur dignissimos voluptates vel blanditiis, nemo dolor, libero perspiciatis natus culpa.
+
+
