@@ -7,12 +7,13 @@ window.jQuery = $;
 
 /* Import project styles and components */
 require('script-loader!slick-carousel');
+require('script-loader!wowjs');
 import 'es6-promise/auto';
 import './modules/ymap';
 import '../sass/css.scss';
 import OnResize from './modules/resize';
 import scrollup from './modules/scrollup';
-
+new WOW().init();
 /* Define project components and variables */
 var	mobileView = window.matchMedia("(max-width: 768px)").matches,
 		resizeAlign = new OnResize(),

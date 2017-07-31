@@ -1,0 +1,20 @@
+@mixin h-line($pos: left, $width: 75px) {
+  position: relative;
+  margin-bottom: 42px;
+  &::after{
+    content: " ";
+    display: block;
+    width: $width;
+    position: absolute;
+    bottom: -19px;
+    background: $border;
+    height: 6px;
+    @if $pos == left {
+      left: 0;
+    }
+    @if $pos == center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -45,16 +45,16 @@ $base-font-size: 16;
 $base-line-height: 26;
 
 /* Colors */
-$default-color: #333;
-$orange: #f1501d;
-$blue: #007fa0;
-$grey: #777;
-$header: $default-color;
+$default-color: #636466;
+$blue: #00a4e1;
+$red: #ed2325;
+$border: #d3dade;
+$header: #242424;
 
 /* Links */
-$link: $orange;
-$link-hov: $orange;
+$link: $blue;
+$link-hov: $red;
 
 /* Components */
-$c-humburger-color: $orange;
-$scroll-up-color: $orange;
+$c-humburger-color: $blue;
+$scroll-up-color: $blue;

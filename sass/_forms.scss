@@ -16,7 +16,11 @@ textarea {
 	margin: 0;
 	font: inherit;
 	padding: 0 10px;
-	border: 1px solid #d1d2d4;
+	border: 0;
+	background: transparent;
+	&:focus {
+		outline: $link auto 5px;;
+	}
 }
 textarea {
 	overflow: auto;

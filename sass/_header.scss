@@ -1,1 +1,68 @@
-
+.top {
+  background: #ebf0f4;
+  
+  .container {
+    position: relative;
+  }
+  .site-logo {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: $gutter;
+    z-index: 20;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,.25);
+    margin: 0;
+  }
+  .row {
+    justify-content: flex-end;
+  }
+  &__item {
+    flex-grow: 0;
+    white-space: nowrap;
+    margin: 7px 0;
+  }
+  .search {
+    ::placeholder {
+      color: #a1b6c6;
+    }
+    &:hover {
+      background: #fff;
+      .search__input {
+        width: 340px;
+        padding: 0 10px; 
+      }
+    }
+    &__input {
+      width: 0;
+      padding: 0;
+      border: 0;
+      transition: all .2s ease-in;
+      outline: none;
+      &:focus {
+        width: 340px;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+.top-contacts {
+  $top-contacts-grey: #666;
+  padding-top: 17px;
+  padding-bottom: 10px;
+  &__item {
+    text-align: right;
+    @include font(20,20);
+  }
+  &__phone {
+    @include font(20,20,300,$msans);
+    color: $header;
+    text-decoration: none;
+    &:hover {
+      color: $top-contacts-grey;
+    }
+  }
+  &__mail {
+    @include font(14,20,50,$msans);
+    color: $top-contacts-grey;
+  }
+}

@@ -17,17 +17,17 @@ html
             .col.top__item
               .search
                 form(action="/search/" method="get")
-                  input(type="text" name="q" placeholder="Поиск по сайту").search__input
-                  button(type="submit").search__submit.site-top__link.site-top__link_search поиск
+                  input(type="text" name="q" placeholder="Введите строку для поиска...").search__input
+                  button(type="submit").search__submit.link-icon.link-icon_search поиск
             .col.top__item
-              a(href="#", title="Личный кабинет").site-top__link.site-top__link_profile Личный кабинет
+              a(href="#", title="Личный кабинет").link-icon.link-icon_profile Личный кабинет
             .col.top__item
-              a(href="#", title="Форум").site-top__link.site-top__link_forum Форум
+              a(href="#", title="Форум").link-icon.link-icon_forum Форум
       .container.top-contacts  
         .top-contacts__item
-          a(href="tel:+7(495)2121846") +7 (495) 212 18 46
+          a(href="tel:+7(495)2121846").top-contacts__phone +7 (495) 212 18 46
         .top-contacts__item
-          a(href="mailto:info@rnatt.ru") info@rnatt.ru
+          a(href="mailto:info@rnatt.ru").top-contacts__mail info@rnatt.ru
       .container
         nav
           button.c-hamburger.c-hamburger--htx
@@ -86,6 +86,42 @@ html
           }, 'site-nav')
     main
       block content
-    footer
-      div.footer
-        div.copyright= 'all right resived'
+    footer.footer
+      .container
+        .row
+          .footer__item.col
+            .footer__nav
+              ul
+                li
+                  a(href="#", title="Об Ассоциации ") Об Ассоциации 
+                li
+                  a(href="#", title="Медиа") Медиа 
+                li
+                  a(href="#", title="Направления деятельности") Направления деятельности
+                li 
+                  a(href="#", title="Партнеры") Партнеры 
+                li
+                  a(href="#", title="Контакты") Контакты
+            .footer__options
+              ul.row
+                li.col
+                  a(href="#", title="title").link-icon.link-icon_light-search поиск 
+                li.col
+                  a(href="#", title="title").link-icon.link-icon_light-profile Личный кабинет 
+                li.col
+                  a(href="#", title="title").link-icon.link-icon_light-forum Форум
+                li.col
+                  a(href="#", title="title").link-icon.link-icon_light-map Карта сайта
+            .footer__copyright
+              .copyright © Национальная Ассоциация Трансфера Технологий 2017
+              .copyright © Создание сайта и дизайн «ИнфоДизайн» 2017
+          .footer__item.col
+            .bottom-contacts
+              .bottom-contacts__item Ломоносовский пр-т, д. 27, к.1,
+              .bottom-contacts__item Москва, Россия, 119192
+              .bottom-contacts__item 
+                a(href="tel:+74952121846") +7 (495) 212 18 46
+            .subscribe
+                form(action="/subscribe/" method="get")
+                  input(type="text" name="email" placeholder="Email").subscribe__input
+                  button(type="submit").subscribe__submit.btn.btn_black подписаться

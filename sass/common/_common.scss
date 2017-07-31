@@ -92,7 +92,10 @@ a {
 
 	}
 	&:focus {
-		outline: 1px solid $link;
+		outline: $link auto 5px;;
+	}
+	&.forward {
+		
 	}
 }
 

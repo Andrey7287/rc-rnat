@@ -1,0 +1,14 @@
+.about {
+  overflow: hidden;
+  margin: 42px 0;
+  text-align: center;
+  .h1, h1 {
+    @include h-line(center);
+  }
+  &__content {
+    @include font(14,22);
+    p:first-of-type {
+      padding-top: 12px;
+    }
+  }
+}

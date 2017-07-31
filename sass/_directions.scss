@@ -1,0 +1,21 @@
+.directions {
+  background: url(../images/present-bkg_left.png) top left no-repeat, url(../images/present-bkg_right.png) top right no-repeat, linear-gradient(to right, #d7dee2 0%, #f0f5fa 50%, #d7dee2 100%);
+  height: 603px;
+  overflow: hidden;
+  .container {
+    position: relative;
+  }
+  &__title {
+    @include font(42,44,300,$msans);
+    color: $header;
+    position: absolute;
+    top: 30px;
+    left: 0;
+  }
+  &__item {
+    &:nth-child(1){
+      margin: 30px 0;
+      text-align: right;
+    }
+  }
+}

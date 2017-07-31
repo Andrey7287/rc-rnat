@@ -1,13 +1,31 @@
+nav {
+	height: 27px;
+	margin-bottom: 17px;
+}
 .site-nav{
 	display: flex;
-	@include mq(md){
-		flex-direction: column;
-		display: none;
-	}
+	margin: 0 -#{$gutter};
+	justify-content: flex-end;
 	&__item {
-		flex-grow: 1;
-		a {
-			display: inline-block;
+		flex: 0;
+		&:hover {
+			.dropdown {transform: scale(1)}
 		}
+	}
+	&__link {
+		padding: 0 $gutter;
+		white-space: nowrap;
+		font-family: $msans;
+		font-weight: 700;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	.dropdown {
+		transform: scale(0);
+		transition: transform .2s ease-in;
+		transform-origin: top right;
+		position: relative;
+		z-index: 30;
+		background: #fff;
 	}
 }

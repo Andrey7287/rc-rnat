@@ -2,22 +2,15 @@
 
 h1, .h1 {
 	@include font(36,40,300,$header-font);
-	text-align: center;
 	margin: 22px 0;
 	color: $header;
-	@include mq(lg){
-		@include font(46,50,500,$header-font);
+	@include mq(sm){
+		@include font(34,38,300,$header-font);
 		margin: 18px 0;
 	}
-	@include mq(md){
-		@include font(42,46,500,$header-font);
-	}
-	@include mq(sm){
-		@include font(38,42,500,$header-font);
-		margin: 10px 0;
-	}
 	@include mq(xs){
-		@include font(34,38,500,$header-font);
+		@include font(32,36,300,$header-font);
+		margin: 15px 0;
 	}
 }
 h2, .h2 {
@@ -117,6 +110,57 @@ p {
 				white-space: nowrap;
 				content: attr(data-head);
 			}
+		}
+	}
+}
+
+.link-icon {
+	font-family: $msans;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 2px 0 2px 20px;
+	text-decoration: none;
+	color: #5f6b71;
+	display: inline-block;
+	position: relative;
+	transition: none;
+	&:hover{
+		color: $blue;
+	}
+	&::before {
+		content: " ";
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-67%);
+		left: 0;
+	}
+	&_search {
+		&::before {
+			@include sprite($ico-search);
+		}
+		&:hover,
+		.act & {
+			&::before {
+				@include sprite($ico-search_blue);
+			}
+		}
+	}
+	&_profile {
+		&::before {
+			@include sprite($ico-profile);
+		}
+		&:hover::before {
+			@include sprite($ico-profile_blue);
+		}
+	}
+	
+	&_forum {
+		&::before {
+			@include sprite($ico-forum);
+		}
+		&:hover::before {
+			@include sprite($ico-forum_blue);
 		}
 	}
 }
