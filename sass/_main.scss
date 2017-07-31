@@ -146,6 +146,11 @@ p {
 			}
 		}
 	}
+	&_light-search {
+		&::before {
+			@include sprite($ico-search_light);
+		}
+	}
 	&_profile {
 		&::before {
 			@include sprite($ico-profile);
@@ -154,13 +159,27 @@ p {
 			@include sprite($ico-profile_blue);
 		}
 	}
-	
+	&_light-profile {
+		&::before {
+			@include sprite($ico-profile_light);
+		}
+	}
 	&_forum {
 		&::before {
 			@include sprite($ico-forum);
 		}
 		&:hover::before {
 			@include sprite($ico-forum_blue);
+		}
+	}
+	&_light-forum {
+		&::before {
+			@include sprite($ico-forum_light);
+		}
+	}
+	&_light-map {
+		&::before {
+			@include sprite($ico-sitemap_light);
 		}
 	}
 }

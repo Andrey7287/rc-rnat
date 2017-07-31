@@ -12,7 +12,7 @@ html
       .top
         .container
           .row
-            .col.top__item.site-logo 
+            a(href="/", title="Логотип").col.top__item.site-logo 
               img(src="./images/site-logo.png", alt="Логотип рус-нат")
             .col.top__item
               .search
@@ -91,27 +91,15 @@ html
         .row
           .footer__item.col
             .footer__nav
-              ul
-                li
-                  a(href="#", title="Об Ассоциации ") Об Ассоциации 
-                li
-                  a(href="#", title="Медиа") Медиа 
-                li
-                  a(href="#", title="Направления деятельности") Направления деятельности
-                li 
-                  a(href="#", title="Партнеры") Партнеры 
-                li
-                  a(href="#", title="Контакты") Контакты
+              ul.row
+                each item in ['Об Ассоциации','Медиа','Направления деятельности','Партнеры','Контакты']
+                  li.col
+                    a(href="#", title=item)= item
             .footer__options
               ul.row
-                li.col
-                  a(href="#", title="title").link-icon.link-icon_light-search поиск 
-                li.col
-                  a(href="#", title="title").link-icon.link-icon_light-profile Личный кабинет 
-                li.col
-                  a(href="#", title="title").link-icon.link-icon_light-forum Форум
-                li.col
-                  a(href="#", title="title").link-icon.link-icon_light-map Карта сайта
+                each obj in [{name: 'поиск', prefix: 'search'},{name: 'Личный кабинет', prefix: 'profile'},{name: 'Форум', prefix: 'forum'},{name: 'Карта сайта', prefix: 'map'}]
+                  li.col
+                    a(href="#", title=name class='link-icon link-icon_light-'+obj.prefix)= obj.name
             .footer__copyright
               .copyright © Национальная Ассоциация Трансфера Технологий 2017
               .copyright © Создание сайта и дизайн «ИнфоДизайн» 2017
