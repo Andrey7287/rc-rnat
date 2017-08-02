@@ -8,8 +8,9 @@ nav {
 	justify-content: flex-end;
 	&__item {
 		flex: 0;
+		position: relative;
 		&:hover {
-			.dropdown {transform: scale(1)}
+			.dropdown {transform: scale(1)!important}
 		}
 	}
 	&__link {
@@ -21,11 +22,30 @@ nav {
 		text-transform: uppercase;
 	}
 	.dropdown {
+		position: absolute;
+		top: 27px;
+		right: 0;
 		transform: scale(0);
 		transition: transform .2s ease-in;
 		transform-origin: top right;
-		position: relative;
 		z-index: 30;
 		background: #fff;
+		&__item{
+			text-align: right;
+			&:first-child {
+				margin-top: 17px;
+			}
+		}
+		&__link {
+			text-decoration: none;
+			display: inline-block;
+			font-family: $msans;
+			font-weight: 500;
+			text-transform: uppercase;
+			width: 100%;
+			padding: 3px 14px;
+			white-space: nowrap;
+			border-bottom: 1px solid $blue;
+		}
 	}
 }

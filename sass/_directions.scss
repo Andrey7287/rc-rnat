@@ -1,21 +1,91 @@
+/* SVG */
+
+.svg-trungle {
+  transition: all .2s ease-in;
+  &__line{
+    stroke: #f0f5fa;
+    stroke-width: 2px;
+  }
+  &__trungle-bkg {
+    fill: #fff;
+    transition: all .4s ease-in;
+  }
+  &__trungle-img {
+    stroke: transparent;
+    stroke-width: 2px;
+    &_filter{
+      opacity: 1;
+      transition: opacity .33s ease-in;
+    }
+  }
+}
+
+
 .directions {
   background: url(../images/present-bkg_left.png) top left no-repeat, url(../images/present-bkg_right.png) top right no-repeat, linear-gradient(to right, #d7dee2 0%, #f0f5fa 50%, #d7dee2 100%);
-  height: 603px;
+  height: 598px;
   overflow: hidden;
   .container {
     position: relative;
+    height: 100%;
   }
   &__title {
     @include font(42,44,300,$msans);
     color: $header;
-    position: absolute;
-    top: 30px;
-    left: 0;
+    transform: translateY(50px);
   }
   &__item {
-    &:nth-child(1){
-      margin: 30px 0;
-      text-align: right;
+    position: absolute;
+    .svg-trungle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    a {
+      position: relative;
+      z-index: 2;
+    }
+    @each $child, $padding-left, $padding-top, $top, $left, $z-index in (1,90,205,-150,773,3),
+    (2,42,86,125,773,3),
+    (3,300,345,7,456,2),
+    (4,83,369,130,290,2),
+    (5,0,0,457,15,2){
+      &:nth-child(#{$child}){
+        top: #{$top}px;
+        left: #{$left}px;
+        padding-left: #{$padding-left}px; 
+        padding-top: #{$padding-top}px;
+        z-index: $z-index;
+      }
+    }
+    &:nth-child(5){
+      padding-right: 140px;
+      .svg-trungle {
+        margin-left: 148px;
+      }
+    }
+
+  }
+  &__link {
+    @include font(20,24,500,$msans);
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      &~.svg-trungle {
+        //transform: scale(1.05);
+        animation: pulse 0.5s ease-out;
+        .svg-trungle__trungle-img{
+          stroke: #f4dfb6;
+          filter: none;
+          &_filter {
+            opacity: 0;
+          }
+        }
+        .svg-trungle__line {
+          stroke: #f4dfb6;
+        }
+      }
     }
   }
 }

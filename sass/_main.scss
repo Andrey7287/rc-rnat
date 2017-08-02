@@ -67,7 +67,61 @@ p {
 }
 
 .btn {
-  text-decoration: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	@include font(18,24,700,$msans);
+	border: 2px solid #fff;
+	border-radius: 4px;
+	box-shadow: 2px 2px 2px 0 #016b93;
+	padding: 10px 36px 10px 12px;
+	background: $red;
+	position: relative;
+	display: inline-block;
+	&::after {
+		content: " ";
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 12px;
+		width: 0;
+		height: 0;
+		transform: translateY(-50%);
+		border-left: 15px solid #fff;
+		border-top: 11px solid transparent;
+		border-bottom: 11px solid transparent;
+		transition: all .4s linear; 
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: none;
+		color: #fff;
+		border: 2px solid $red;
+		&::after {
+			right: 8px;
+		}
+	}
+	&_small-black {
+		@include font(14,26,300,$msans);
+		padding: 0 38px 0 20px;
+		border: 2px solid #202a2f;
+		background: #202a2f;
+		box-shadow: none;
+		transition: all .2s ease-in;
+		&::after {
+			border-width: 7px 0 7px 11px;
+			right: 14px;
+		}
+		&:hover,
+		&:active,
+		&:focus {
+			border: 2px solid #fff;
+			&::after {
+				right: 10px;
+			}
+		}
+	}
 }
 
 .content {
@@ -76,6 +130,13 @@ p {
   }
 }
 
+table {
+	border-collapse: collapse;
+	td, th {
+		padding: 0;
+		font-weight: inherit;
+	}
+}
 .table {
 	th {
 		background: #ededed;
@@ -131,8 +192,7 @@ p {
 		content: " ";
 		display: block;
 		position: absolute;
-		top: 50%;
-		transform: translateY(-67%);
+		bottom: 9px;
 		left: 0;
 	}
 	&_search {
@@ -150,6 +210,9 @@ p {
 		&::before {
 			@include sprite($ico-search_light);
 		}
+		&:hover::before {
+			@include sprite($ico-search_blue);
+		}
 	}
 	&_profile {
 		&::before {
@@ -162,6 +225,9 @@ p {
 	&_light-profile {
 		&::before {
 			@include sprite($ico-profile_light);
+		}
+		&:hover::before {
+			@include sprite($ico-profile_blue);
 		}
 	}
 	&_forum {
@@ -176,10 +242,16 @@ p {
 		&::before {
 			@include sprite($ico-forum_light);
 		}
+		&:hover::before {
+			@include sprite($ico-forum_blue);
+		}
 	}
 	&_light-map {
 		&::before {
 			@include sprite($ico-sitemap_light);
+		}
+		&:hover::before {
+			@include sprite($ico-sitemap_blue);
 		}
 	}
 }

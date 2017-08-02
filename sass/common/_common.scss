@@ -85,7 +85,8 @@ a {
 	transition: all .2s ease-in;
 	&:active,
 	&:hover,
-	&:focus {
+	&:focus,
+	.act>& {
 		color: $link-hov;
 		text-decoration: none;
 	}
@@ -93,10 +94,31 @@ a {
 
 	}
 	&:focus {
-		outline: $link auto 5px;;
+		outline: $link auto 2px;;
 	}
 	&.forward {
-		
+		position: relative;
+		padding-right: 1.2em;
+		&::after {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 4px;
+			width: 0;
+			height: 0;
+			transform: translateY(-40%);
+			border-left: 0.6em solid $blue;
+			border-top: 0.4em solid transparent;
+			border-bottom: 0.4em solid transparent;
+			transition: all .4s linear; 
+		}
+		&:hover {
+			&::after {
+				border-left: 0.6em solid $red;
+				right: 2px;
+			}
+		}
 	}
 }
 

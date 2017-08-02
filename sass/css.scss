@@ -8,12 +8,14 @@
 @import "common/common";
 
 /*Components*/
+@import "../node_modules/animate.css/animate.min.css";
 @import "components/map";
 @import "components/components.hamburger";
 @import "components/slider";
 @import "components/components.scrollup";
 @import "components/breadcrumbs";
-@import "../node_modules/animate.css/animate.min.css";
+@import "components/calendar";
+
 
 
 @import "header";
@@ -24,3 +26,4 @@
 @import "forms";
 @import "about";
 @import "directions";
+@import "news";

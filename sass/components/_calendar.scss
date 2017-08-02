@@ -1,0 +1,86 @@
+.calendar-wrapp {
+  width: 262px;
+  border-radius: 7px;
+}
+table.calendar {
+  table-layout: fixed;
+  width: 100%;
+  thead {
+    @include font(20,22,300,$msans);
+    color: #fff;
+    text-transform: uppercase;
+    background: $blue;
+    b {
+      font-weight: 700;
+    }
+    [colspan="3"] {
+      padding: 0 18px;
+    }
+    button {
+      text-indent: -9999px;
+      padding: 5px;
+      margin: 10px;
+      @include font(0,0);
+      border: 1px solid transparent;
+      transition: all .2s ease-in;
+      &::before {
+        content: " ";
+        display: block;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+      }
+      &.left::before {
+        border-right: 20px solid $border;
+      }
+      &.right::before {
+        border-left: 20px solid $border;
+      }
+      &:hover {
+        border: 1px solid $border;
+      }
+    }
+  }
+  tbody {
+    td {
+      border: 1px solid $border;
+      span, a {
+        display: block;
+        padding: 5px 1px;
+        width: 100%;
+        text-align: center;
+        color: #4d5155;
+        @include font(13);
+        &.inact {
+          color: #ccc;
+        }
+        &.act {
+          color: #1e55af;
+          position: relative;
+          text-decoration: none;
+          &::after {
+            position: absolute;
+            content: " ";
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-right: 10px solid #00a4e1;
+            border-bottom: 10px solid transparent;
+            transition: all .2s ease-in;
+          }
+          &:hover {
+            color: $red;
+            &::after {
+              border-right: 10px solid $red;
+            }
+          }
+        }
+        &.today {
+          background: #eef1f5;
+          border: 1px solid $red;
+          color: $red;
+        }
+      }
+    }
+  }
+}

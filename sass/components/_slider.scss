@@ -47,6 +47,13 @@ $slider-image-offset: 390px;
 		padding-top: 160px;
 		width: 360px;
 	}
+	&__title {
+		@include font(36,42,700,$msans);
+		text-transform: uppercase;
+	}
+	.btn {
+		margin-top: 20px;
+	}
 }
 .slider-dots {
 	position: absolute;

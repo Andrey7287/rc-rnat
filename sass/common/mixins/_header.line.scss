@@ -1,6 +1,8 @@
 @mixin h-line($pos: left, $width: 75px) {
   position: relative;
   margin-bottom: 42px;
+  display: block;
+  text-decoration: none;
   &::after{
     content: " ";
     display: block;

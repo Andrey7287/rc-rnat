@@ -1,19 +1,26 @@
 .footer {
 	background: url(../images/footer-bkg_left.png) top left no-repeat, url(../images/footer-bkg_right.png) top right no-repeat, #3d484e;
-	.infodisign {
-		text-align: right;
+	padding: 34px 0 18px; 
+	.row {
+		flex-wrap: nowrap;
 	}
 	&__item {
 		&:first-child{
-			@include basis(75%);				
+			@include basis(66.66666%);				
 		}
 		&:last-child{
-			@include basis(25%);				
+			@include basis(33.33333%);				
 		}
 	}
-	&__nav {
+	&__nav,
+	&__options {
+		margin-bottom: 20px;
+		.row {
+			margin: 0 -5px;
+		}
 		.col {
 			flex-grow: 0;
+			padding: 0 10px;
 		}
 		a {
 			white-space: nowrap;
@@ -22,6 +29,31 @@
 			color: #fff;
 			font-family: $msans;
 			font-weight: 700;
+		}
+	}
+	&__options {
+		a {
+			font-weight: 500;
+			color: $border;
+		}
+	}
+	&__copyright {
+		@include font(13,20);
+		color: #7f9099;
+	}
+}
+.bottom-contacts {
+	margin-bottom: 30px;
+	line-height: 1.25;
+	color: #fff;
+	&__item {
+		color: inherit;
+		text-align: right;
+		margin-bottom: 10px;
+		a {
+			color: inherit;
+			text-decoration: none;
+			@include font(20,20);
 		}
 	}
 }

@@ -19,7 +19,7 @@ textarea {
 	border: 0;
 	background: transparent;
 	&:focus {
-		outline: $link auto 5px;;
+		outline: $link auto 2px;;
 	}
 }
 textarea {
@@ -97,4 +97,24 @@ fieldset {
 			}
 		}
 	}*/
+}
+.subscribe {
+	display: flex;
+	&__item {
+		flex: 0;
+		&:first-child {
+			flex-basis: 197px;
+		}
+		&:last-child {
+			flex-basis: 163px;
+		}
+	}
+	&__input {
+		box-sizing: border-box;
+		@include font(14);
+		padding: 2px 7px;
+		background: #fff;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
 }

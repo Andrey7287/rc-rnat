@@ -105,11 +105,12 @@ html
               .copyright © Создание сайта и дизайн «ИнфоДизайн» 2017
           .footer__item.col
             .bottom-contacts
-              .bottom-contacts__item Ломоносовский пр-т, д. 27, к.1,
-              .bottom-contacts__item Москва, Россия, 119192
+              .bottom-contacts__item Ломоносовский пр-т, д. 27, к.1,<br /> Москва, Россия, 119192
               .bottom-contacts__item 
                 a(href="tel:+74952121846") +7 (495) 212 18 46
-            .subscribe
-                form(action="/subscribe/" method="get")
+            form(action="/subscribe/" method="get")
+              .subscribe
+                .subscribe__item
                   input(type="text" name="email" placeholder="Email").subscribe__input
-                  button(type="submit").subscribe__submit.btn.btn_black подписаться
+                .subscribe__item
+                  button(type="submit").subscribe__submit.btn.btn_small-black подписаться

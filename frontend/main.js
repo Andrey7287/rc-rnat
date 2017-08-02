@@ -19,6 +19,16 @@ var	mobileView = window.matchMedia("(max-width: 768px)").matches,
 		resizeAlign = new OnResize(),
 		scrollTiming = 0;
 
+/*********************************
+****** Menu expand on focus ******
+**********************************/
+$('.dropdown__link').focusin(function(){
+	$(this).closest('.dropdown').css('transform', 'scale(1)');
+});
+$('.dropdown__link').focusout(function(){
+	$(this).closest('.dropdown').css('transform', 'scale(0)');
+});
+
 /************************
 ****** Mobile menu ******
 *************************/
@@ -41,6 +51,18 @@ $('.js-slider-1').slick({
 	dots: true,
 	fade: true,
 	appendDots: $('.js-slider-1-dots')
+});
+
+/***************************
+******** Directions ********
+****************************/
+
+$('.directions').on('click', '.directions__link', function(e){
+
+	e.preventDefault();
+
+	$(this).sibling
+
 });
 
 /************************

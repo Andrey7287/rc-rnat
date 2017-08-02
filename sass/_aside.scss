@@ -1,1 +1,17 @@
+.news-block {
+  margin: 35px 0 70px;
+  &__item {
+    &:first-child {
+      @include basis(75%);
+    }
+    &:last-child {
+      @include basis(25%);
+    }
+  }
+  .forward {
+    margin-top: 10px;
+    float: right;
+  }
+}
+
 
