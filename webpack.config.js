@@ -9,7 +9,7 @@ const webpack = require('webpack'),
 	pages = ['index'];
 
 const extractCSS = new ExtractTextPlugin({
-	filename: 'sass/style.css',
+	filename: 'style.css',
 	disable: !isProd,
 	allChunks: true
 });
@@ -156,7 +156,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						query: {
-							name: isProd ? '../images/[name].[ext]' : './images/[name].[ext]'
+							name: './images/[name].[ext]'
 						}
 					}
 				]
@@ -166,7 +166,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						query: {
-							name: isProd ? '../fonts/[name].[ext]' : './fonts/[name].[ext]'
+							name: './fonts/[name].[ext]'
 						}
 					}
 				]
