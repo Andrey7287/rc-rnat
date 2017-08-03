@@ -1,5 +1,5 @@
 .news-block {
-  margin: 35px 0 70px;
+  padding: 35px 0;
   &__item {
     &:first-child {
       @include basis(75%);
@@ -7,10 +7,6 @@
     &:last-child {
       @include basis(25%);
     }
-  }
-  .forward {
-    margin-top: 10px;
-    float: right;
   }
 }
 

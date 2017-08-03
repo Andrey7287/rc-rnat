@@ -1,4 +1,27 @@
 extends layout 
 
 block content
-  h1= 'inner1'
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item in ['Миссия Ассоциации','Правление','Экспертный совет','Аппарат','Календарь мероприятий','Контакты','FAQ']
+            li.left-menu__item
+              a(href="#", title=item).left-menu__link= item 
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Об ассоциации
+            span.breadcrumbs__item  Правление
+          h1 Правление
+          p Взрыв интуитивно понятен. Сверхпроводник, даже при наличии сильных аттракторов, психологически дегустирует плазменный квант. Ожелезнение, несмотря на то, что есть много бунгало для проживания, вознаграждает вексель. Пульсар жизненно заряжает электрод. 
+          .personlist.row 
+            each person, idx in [{name:'Сергей петрович',sername:'Иванов'},{name:'Иван Иванович',sername:'Петров-Сидоров'},{name:'Вера Сергеевна',sername:'Оченьдлиннаяфамилия'},{name:'Сергей петрович',sername:'Иванов'},{name:'Иван Иванович',sername:'Петров-Сидоров'},{name:'Вера Сергеевна',sername:'Оченьдлиннаяфамилия'}]
+              .personlist__item.col
+                .person
+                  .person__img
+                    img(src="./images/person"+(idx+1)+".jpg", alt="")
+                  a(href="").person__name #[div= person.sername] #[= person.name]
+                  .person__sub Название подразделения
+                  .person__post Должность

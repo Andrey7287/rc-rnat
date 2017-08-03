@@ -1,0 +1,50 @@
+.inner {
+  &__item { 
+    &:first-child {
+      @include basis(25%);
+      padding-top: 140px;
+    }
+    &:last-child {
+      @include basis(75%);
+      position: relative;
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: $gutter;
+        right: $gutter;
+        background: $border;
+        height: 6px;
+      }
+    }
+  }
+  .h1, h1 {
+    &:first-of-type {
+      @include h-line;
+    }
+  }
+  p {
+    &:first-of-type {
+      padding-top: 10px;
+    }
+  }
+  //////////////
+  &__sub-item {
+    &:first-child {
+      @include basis(77.77777%);
+    }
+    &:last-child {
+      @include basis(22.22222%);
+      padding-top: 140px;
+      .h3, h3 {
+        &:first-of-type {
+          @include h-line;
+          &::after {
+            width: 67px;
+            height: 3px;
+          }
+        }
+      }
+    }
+  }
+}

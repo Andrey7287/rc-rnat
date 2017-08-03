@@ -1,0 +1,45 @@
+.document-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &__item {
+    position: relative;
+    padding-left: 25px;
+    &::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &_doc {
+      &::before {
+        @include sprite($ico-doc_word);
+      }
+    }
+    &_pdf {
+      &::before {
+        @include sprite($ico-doc_pdf);
+      }
+    }
+    &_xls {
+      &::before {
+        @include sprite($ico-doc_xls);
+      }
+    }
+    &_any {
+      &::before {
+        @include sprite($ico-doc_any);
+      }
+    }
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    @include font(14,18);
+  }
+  &__type {
+    color: #999;
+    @include font(13,18);
+  }  
+}

@@ -50,9 +50,9 @@
   $top-contacts-grey: #666;
   padding-top: 17px;
   padding-bottom: 10px;
+  line-height: 1.25;
   &__item {
     text-align: right;
-    @include font(20,20);
   }
   &__phone {
     @include font(20,20,300,$msans);
@@ -63,7 +63,7 @@
     }
   }
   &__mail {
-    @include font(14,20,50,$msans);
+    @include font(14,20,500,$msans);
     color: $top-contacts-grey;
   }
 }

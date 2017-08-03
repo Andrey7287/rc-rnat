@@ -1,0 +1,13 @@
+@mixin img-fit ($padding: 100%){
+  position: relative;
+  height: 0;
+  padding-bottom: $padding;
+  overflow: hidden;
+  img {
+    position: absolute;
+    max-width: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

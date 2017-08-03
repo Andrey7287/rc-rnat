@@ -1,0 +1,29 @@
+.personlist {
+ &__item {
+   @include basis(33.33333%);
+   
+ } 
+}
+.person {
+  line-height: 1.375;
+  padding-top: 20px;
+   padding-bottom: 35px;
+  &__img {
+    border: 1px solid $border;
+    margin-bottom: 10px;
+    @include img-fit(348px);
+  }
+  &__name {
+    font-weight: 700;
+    text-decoration: none;
+    div {
+      text-transform: uppercase;
+    }
+  }
+  &__sub {
+    color: #333;
+  }
+  &__post {
+    font-size: 0.875em;
+  }
+}
