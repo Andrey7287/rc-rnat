@@ -1,0 +1,36 @@
+.social {
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    flex: 0;
+    @include font(0,0);
+    &::before {
+      content: " ";
+      display: inline-block;
+      transition: transform .2s ease-in;
+    }
+    &_em::before {
+      @include sprite($ico-soc_mail);
+    }
+    &_pr::before {
+      @include sprite($ico-soc_print);
+    }
+    &_vk::before {
+      @include sprite($ico-soc_vk);
+    }
+    &_fb::before {
+      @include sprite($ico-soc_fb);
+    }
+    &_ok::before {
+      @include sprite($ico-soc_ok);
+    }
+    &_tw::before {
+      @include sprite($ico-soc_tw);
+    }
+    &:hover {
+      &::before {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

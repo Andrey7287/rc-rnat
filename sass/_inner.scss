@@ -26,6 +26,18 @@
   p {
     &:first-of-type {
       padding-top: 10px;
+      
+    }
+  }
+  .content,
+  .news-detail__txt {
+    p:first-of-type {
+      padding-top: 16px;
+    }
+  }
+  &__aside {
+    .h3, h3 {
+      @include h-line(left, 67px, 3px);
     }
   }
   //////////////
@@ -36,15 +48,6 @@
     &:last-child {
       @include basis(22.22222%);
       padding-top: 140px;
-      .h3, h3 {
-        &:first-of-type {
-          @include h-line;
-          &::after {
-            width: 67px;
-            height: 3px;
-          }
-        }
-      }
     }
   }
 }

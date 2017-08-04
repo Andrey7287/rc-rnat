@@ -1,0 +1,36 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['Миссия Ассоциации','Правление','Экспертный совет','Аппарат','Календарь мероприятий','Контакты','FAQ']
+            -var act = idx ? ' act' : '';
+            li.left-menu__item
+              a(href="#", title=item class="left-menu__link"+act)= item 
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Об ассоциации
+            span.breadcrumbs__item  Календарь мероприятий
+          h1 Календарь мероприятий
+          .calendar-detail
+            h3 Быстрый переход по годам
+            ul.calendar-filter.years
+              each year, idx in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','...']
+                -var prefix = idx == 2 ? ' act' : ''
+                li(class="calendar-filter__item"+prefix)
+                  if  idx < 3 
+                    a(href="#", title="title")= year
+                  else
+                    span= year
+            h3 Выбор месяца
+            ul.calendar-filter.calendar-filter
+              each year, idx in ['Январь ','Февраль ','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь ','Октябрь','Ноябрь', 'Декабрь']
+                -var prefix = idx == 5 ? ' act' : ''
+                li(class="calendar-filter__item"+prefix)
+                  a(href="#", title="title")= year
+            include ./includes/calendar.pug
+            

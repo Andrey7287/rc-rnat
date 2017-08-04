@@ -10,39 +10,70 @@ table.calendar {
     color: #fff;
     text-transform: uppercase;
     background: $blue;
+    border: 1px solid $border;
+    .calendar-detail & {
+       @include font(13);
+    }
+    th {
+      .calendar-detail & {
+        padding: 15px 0px;
+      }
+    }
     b {
       font-weight: 700;
     }
-    [colspan="3"] {
-      padding: 0 18px;
-    }
     button {
       text-indent: -9999px;
-      padding: 5px;
-      margin: 10px;
+      margin: 5px auto;
       @include font(0,0);
-      border: 1px solid transparent;
-      transition: all .2s ease-in;
-      &::before {
-        content: " ";
+      display: block;
+      .triangle {
         display: block;
-        border-top: 15px solid transparent;
-        border-bottom: 15px solid transparent;
+        transform: scale(0.6);
+        .calendar-detail & {
+          transform: scale(1);
+        }
+        &__item {
+          fill: $border;
+          stroke: $border;
+          stroke-width: 2px;
+          transition: all .2s ease-in;
+          .calendar-detail & {
+            fill: transparent;
+          }
+        }
       }
-      &.left::before {
-        border-right: 20px solid $border;
+      :hover {
+        .triangle{
+          &__item {
+            fill: $red;
+            stroke: $red;
+          }
+        }
       }
-      &.right::before {
-        border-left: 20px solid $border;
-      }
-      &:hover {
-        border: 1px solid $border;
-      }
+      // border: 1px solid transparent;
+      // transition: all .2s ease-in;
+      // &::before {
+      //   content: " ";
+      //   display: block;
+      //   border-top: 15px solid transparent;
+      //   border-bottom: 15px solid transparent;
+      // }
+      // &.left::before {
+      //   border-right: 20px solid $border;
+      // }
+      // &.right::before {
+      //   border-left: 20px solid $border;
+      // }
+      // &:hover {
+      //   border: 1px solid $border;
+      // }
     }
   }
   tbody {
     td {
       border: 1px solid $border;
+      position: relative;
       span, a {
         display: block;
         padding: 5px 1px;
@@ -50,6 +81,11 @@ table.calendar {
         text-align: center;
         color: #4d5155;
         @include font(13);
+        position: relative;
+        z-index: 2;
+        .calendar-detail & {
+          padding: 28px 1px;
+        }
         &.inact {
           color: #ccc;
         }
@@ -69,18 +105,85 @@ table.calendar {
             transition: all .2s ease-in;
           }
           &:hover {
-            color: $red;
+            color: #fff;
+            background: $blue;
             &::after {
-              border-right: 10px solid $red;
+              border-right: 10px solid #fff
+            }
+            &~.event {
+              opacity: 1;
+              z-index: 3;
             }
           }
+
         }
         &.today {
           background: #eef1f5;
           border: 1px solid $red;
           color: $red;
+          .calendar-detail &:after {
+            content: "сегодня";
+            color: #abb1b9;
+            font-weight: 700;
+            font-size: 0.4em;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
       }
+    }
+  }
+  .event {
+    border: 1px solid $blue;
+    padding: 3px 7px;
+    background: #f2fcff;
+    font-size: 0.40635em;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 200%;
+    transform: translate(-25%, -100%);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .2s ease-in;
+    &__title {
+      color: #006a91;
+      line-height: 1.125;
+    }
+    &__date {
+      color: #333;
+      @include font(12,28)
+    }
+  }
+}
+.calendar-detail {
+  margin-bottom: 30px;
+  h3 {
+    @include h-line($height: 3px);
+    margin-bottom: 22px;
+  }
+  table.calendar {
+    font-size: 2.4616em;
+  }
+}
+.calendar-filter {
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    flex: 0;
+    a,span {
+      text-decoration: none;
+      .years & {
+        font-size: 1.25em;
+      }
+    }
+    &>span {
+      color: #d3dade;
     }
   }
 }

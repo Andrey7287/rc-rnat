@@ -6,7 +6,7 @@
     }
   }
   &__title {
-    @include h-line(left);
+    @include h-line($width: 75px);
     a {
       text-decoration: none;
       line-height: 1.375;

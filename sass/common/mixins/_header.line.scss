@@ -1,4 +1,4 @@
-@mixin h-line($pos: left, $width: 75px) {
+@mixin h-line($pos: left, $width: 67px, $height: 6px) {
   position: relative;
   margin-bottom: 42px;
   display: block;
@@ -10,7 +10,7 @@
     position: absolute;
     bottom: -19px;
     background: $border;
-    height: 6px;
+    height: $height;
     @if $pos == left {
       left: 0;
     }

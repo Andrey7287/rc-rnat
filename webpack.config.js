@@ -5,7 +5,7 @@ const webpack = require('webpack'),
 	SpritesmithPlugin = require('webpack-spritesmith'),
 	nodeEnv = process.env.NODE_ENV || 'development',
 	isProd = nodeEnv === 'production',
-	innerPages = 2,
+	innerPages = 6,
 	pages = ['index'];
 
 const extractCSS = new ExtractTextPlugin({

@@ -1,0 +1,93 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['профиль пользователя','редактирование профиля','выход из личного кабинета']
+            -var act = idx ? ' act' : '';
+            li.left-menu__item
+              a(href="#", title=item class="left-menu__link"+act)= item 
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Личный кабинт 
+            span.breadcrumbs__item  Редактирование профиля
+          h1 Редактирование профиля
+          form(action="").cabinet
+            .h3 Информация о пользователе
+            .row  
+              .col.col-12
+                .cabinet__item
+                  label(for="cabinetFIO") Фамилия Имя Отчество #[sup *]
+                  input(type="text" id="cabinetFIO" name="")
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetEmail") Электронная почта #[sup *]
+                  input(type="text" id="cabinetEmail" name="")
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetPass") Новый пароль
+                  input(type="text" id="cabinetPass" name="")
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetPassRep") Повторите пароль
+                  input(type="text" id="cabinetPassRep" name="")
+
+            .h3 Информация о компании
+            .row
+              .col.col-12
+                .cabinet__item
+                  label(for="cabinetOrg") Наименование организации #[sup *]
+                  input(type="text" id="cabinetOrg" name="")
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetINN") ИНН организации #[sup *]
+                  input(type="text" id="cabinetINN" name="")
+              .col.col-8
+                .cabinet__item
+                  label(for="cabinetCategory") Категория 
+                  select(id="cabinetCategory" name="")
+                    option(selected="selected") Выбор из ограниченного числа вариантов
+                    option 2
+                    option 3
+              .col.col-12
+                .cabinet__item
+                  label(for="cabinetChif") ФИО руководителя #[sup *]
+                  input(type="text" id="cabinetChif" name="")
+            .h3 Контактная информация
+            .row
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetPhone") Телефон #[sup *]
+                  input(type="tel" id="cabinetPhone")
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetFacs") Факс
+                  input(type="text" id="cabinetFacs" name="")
+              .col.col-4
+                .cabinet__item
+                  label(for="cabinetSite") Веб-сайт
+                  input(type="text" id="cabinetSite" name="")
+              .col.col-12
+                .cabinet__item
+                  label(for="cabinetNatt") ФИО ответственного за взаимодействие с НАТТ
+                  input(type="text" id="cabinetNatt" name="")
+            .h3 Дополнительные настройки
+            .row 
+              .col.col-8
+                .cabinet__item
+                  label(for="cabinetPrivat") Приватность профиля
+                  select(id="cabinetPrivat" name="")
+                    option(selected="selected") Показывать профиль только зарегистрированным пользователям
+                    option 2
+                    option 3
+              .col.col-4
+                .cabinet__item
+                  input(type="checkbox" id="cabinetSubscribe" name="")
+                  label(for="cabinetSubscribe") Подписаться на рассылку
+            .cabinet__footer
+              button(type="submit").btn сохранить
+          

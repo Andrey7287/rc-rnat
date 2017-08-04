@@ -46,6 +46,24 @@ main {
 	padding: 0 $gutter;
 	flex: 1;
 }
+.col-3 {
+	@include basis(25%);
+}
+.col-4 {
+	@include basis(33.33333%);
+}
+.col-5 {
+	@include basis(41.66666%);
+}
+.col-6 {
+	@include basis(50%);
+}
+.col-8 {
+	@include basis(66.66666%);
+}
+.col-12 {
+	@include basis(100%);
+}
 
 // Normalize
 
@@ -94,7 +112,7 @@ a {
 
 	}
 	&:focus {
-		outline: $link auto 2px;;
+		outline: $link auto 2px;
 	}
 	&.forward {
 		position: relative;

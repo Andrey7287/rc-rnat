@@ -1,0 +1,27 @@
+.news-detail {
+  &__img-wrapp {
+    width: 456px;
+    float: right;
+    margin: 22px 0 15px 30px;
+  }
+  &__img {
+    @include img-fit(66%);
+    border: 1px solid $border;
+  }
+  &__img-txt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @include font(14,22);
+    padding: 17px 14px;
+    background: rgba(211,218,222,.8);
+  }
+  .inner__aside {
+    float: right;
+    clear: both;
+  }
+  &__txt {
+    max-width: 652px;
+  }
+}
