@@ -40,7 +40,10 @@
 	}
 	&__copyright {
 		@include font(13,20);
-		color: #7f9099;
+		.copyright {
+			color: #7f9099;
+			text-decoration: none;
+		}
 	}
 }
 .bottom-contacts {

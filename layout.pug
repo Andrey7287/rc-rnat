@@ -3,6 +3,7 @@ html
   include ./mixins/menu.pug
   head
     title= 'title'
+    meta(charset="utf-8")
     meta(name="viewport", content="initial-scale=1.0, width=device-width")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="cmsmagazine" content="849adf88a19b6cd917ad2f593e243b3a")
@@ -13,16 +14,18 @@ html
         .container
           .row
             a(href="/", title="Логотип").col.top__item.site-logo 
-              img(src="./images/site-logo.png", alt="Логотип рус-нат")
+              picture
+                source(srcset="./images/site-logo_m.png" media="(max-width: 1200px)")
+                img(src="./images/site-logo.svg" alt="Логотип рус-нат")
             .col.top__item
               .search
                 form(action="/search/" method="get")
                   input(type="text" name="q" placeholder="Введите строку для поиска...").search__input
                   button(type="submit").search__submit.link-icon.link-icon_search поиск
-            .col.top__item
+            .col.top__item.act
               a(href="#", title="Личный кабинет").link-icon.link-icon_profile Личный кабинет
             .col.top__item
-              a(href="#", title="Форум").link-icon.link-icon_forum Форум
+              a(href="inner6.html", title="Форум").link-icon.link-icon_forum Форум
       .container.top-contacts  
         .top-contacts__item
           a(href="tel:+7(495)2121846").top-contacts__phone +7 (495) 212 18 46
@@ -102,7 +105,7 @@ html
                     a(href="#", title=name class='link-icon link-icon_light-'+obj.prefix)= obj.name
             .footer__copyright
               .copyright © Национальная Ассоциация Трансфера Технологий 2017
-              .copyright © Создание сайта и дизайн «ИнфоДизайн» 2017
+              a(href="http://infodesign.ru/", title="infodesign.ru").copyright © Создание сайта и дизайн «ИнфоДизайн» 2017
           .footer__item.col
             .bottom-contacts
               .bottom-contacts__item Ломоносовский пр-т, д. 27, к.1,<br /> Москва, Россия, 119192

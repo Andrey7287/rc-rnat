@@ -9,15 +9,18 @@ window.jQuery = $;
 require('script-loader!slick-carousel');
 require('script-loader!wowjs');
 import 'es6-promise/auto';
-import './modules/ymap';
+import './modules/gmap';
 import '../sass/css.scss';
 import OnResize from './modules/resize';
 import scrollup from './modules/scrollup';
+import customSelect from 'custom-select';
 new WOW().init();
+customSelect('select');
 /* Define project components and variables */
 var	mobileView = window.matchMedia("(max-width: 768px)").matches,
 		resizeAlign = new OnResize(),
 		scrollTiming = 0;
+
 
 /*********************************
 ****** Menu expand on focus ******

@@ -40,6 +40,7 @@
     "webpack-spritesmith": "0.3.3"
   },
   "dependencies": {
+    "custom-select": "^1.1.2",
     "jquery": "^3.1.1",
     "slick-carousel": "^1.6.0",
     "wowjs": "^1.1.3"

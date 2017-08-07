@@ -1,0 +1,18 @@
+.contacts,
+.feed-back {
+  &__item {
+    &:first-child {
+      @include basis(45%);
+    }
+    &:last-child {
+      @include basis(55%);
+    }
+  }
+}
+.contacts {
+  margin-bottom: 65px;
+  &__title {
+    color: #999;
+    margin-top: 15px;
+  }
+}

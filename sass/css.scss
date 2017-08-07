@@ -9,6 +9,7 @@
 
 /*Components*/
 @import "../node_modules/animate.css/animate.min.css";
+@import "../node_modules/custom-select/src/css/custom-select.css";
 @import "components/map";
 @import "components/components.hamburger";
 @import "components/slider";
@@ -17,6 +18,7 @@
 @import "components/calendar";
 @import "components/document.list";
 @import "components/social";
+@import "components/link.icon";
 
 
 
@@ -32,3 +34,4 @@
 @import "inner";
 @import "person";
 @import "news.detail";
+@import "contacts";

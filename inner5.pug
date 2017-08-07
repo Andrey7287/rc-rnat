@@ -6,9 +6,9 @@ block content
       .inner__item.col
         ul.left-menu
           each item, idx in ['профиль пользователя','редактирование профиля','выход из личного кабинета']
-            -var act = idx ? ' act' : '';
-            li.left-menu__item
-              a(href="#", title=item class="left-menu__link"+act)= item 
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item 
       .inner__item.col
         .inner__main
           .breadcrumbs
@@ -26,15 +26,15 @@ block content
               .col.col-4
                 .cabinet__item
                   label(for="cabinetEmail") Электронная почта #[sup *]
-                  input(type="text" id="cabinetEmail" name="")
+                  input(type="email" id="cabinetEmail" name="")
               .col.col-4
                 .cabinet__item
                   label(for="cabinetPass") Новый пароль
-                  input(type="text" id="cabinetPass" name="")
+                  input(type="password" id="cabinetPass" name="")
               .col.col-4
                 .cabinet__item
                   label(for="cabinetPassRep") Повторите пароль
-                  input(type="text" id="cabinetPassRep" name="")
+                  input(type="password" id="cabinetPassRep" name="")
 
             .h3 Информация о компании
             .row

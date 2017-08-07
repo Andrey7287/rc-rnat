@@ -1,0 +1,47 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['профиль пользователя','редактирование профиля','выход из личного кабинета']
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item 
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Об ассоциации  
+            span.breadcrumbs__item  Контакты
+          h1 Контакты
+          script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTwoPPY6v9wExvtx-aNAG5W9vTYQ2AMlQ")
+          .row.contacts
+            .col.contacts__item
+              .h4 Национальная Ассоциация Трансфера Технологий
+              .contacts__title Адрес:
+              div 119234, Москва, Россия,<br> ул. Ленинские Горы, дом 1 стр. 7
+              .contacts__title Телефон:
+              div +7 (495) 212 18 46
+              .contacts__title E-mail:
+              div 
+                a(href="mailto:info@rusnatt.ru") info@rusnatt.ru
+            .col.contacts__item
+              .map#map
+          form(action="").feed-back
+            h3 Напишите нам
+            .row
+              .col.feed-back__item
+                label(for="feedbackName") Представьтесь, пожалуйста #[sup *]
+                input(type="text" id="feedbackName" name="")
+                label(for="feedbackEmail") Электронная почта #[sup *]
+                input(type="email" id="feedbackEmail" name="")
+                label(for="cabinetPhone") Телефон #[sup *]
+                input(type="tel" id="cabinetPhone")
+              .col.feed-back__item
+                label(for="feedbackTxt") Ваше сообщение #[sup *]
+                textarea#feedbackTxt(name="")
+            .feed-back__footer
+              button(type="submit").btn отправить
+          

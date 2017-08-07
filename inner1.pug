@@ -6,9 +6,9 @@ block content
       .inner__item.col
         ul.left-menu
           each item, idx in ['Миссия Ассоциации','Правление','Экспертный совет','Аппарат','Календарь мероприятий','Контакты','FAQ']
-            -var act = idx ? ' act' : '';
-            li.left-menu__item
-              a(href="#", title=item class="left-menu__link"+act)= item 
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item 
       .inner__item.col
         .inner__main
           .breadcrumbs
