@@ -8,6 +8,7 @@ window.jQuery = $;
 /* Import project styles and components */
 require('script-loader!slick-carousel');
 require('script-loader!wowjs');
+require('jquery-colorbox');
 import 'es6-promise/auto';
 import './modules/gmap';
 import '../sass/css.scss';
@@ -20,6 +21,13 @@ customSelect('select');
 var	mobileView = window.matchMedia("(max-width: 768px)").matches,
 		resizeAlign = new OnResize(),
 		scrollTiming = 0;
+
+
+$('.lightbox').colorbox({
+	rel:'gal',
+	width:'85%',
+	height:'85%'
+});
 
 
 /*********************************

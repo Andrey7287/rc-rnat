@@ -1,0 +1,11 @@
+.gallery-list {
+  &__item {
+    @include basis(33.33333%);
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
+}
+.gallery-thumb {
+  @include img-fit(88%);
+  display: block;
+}

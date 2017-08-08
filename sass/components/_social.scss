@@ -1,9 +1,14 @@
 .social {
   display: flex;
-  justify-content: space-between;
+  padding-bottom: 35px;
+  padding-top: 9px;
   &__item {
     flex: 0;
     @include font(0,0);
+    margin-left: 3px;
+    &:first-child {
+      margin-left: 0;
+    }
     &::before {
       content: " ";
       display: inline-block;

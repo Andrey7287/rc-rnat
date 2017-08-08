@@ -1,6 +1,13 @@
 .news {
+  &__img {
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
   &__item {
     margin-bottom: 10px;
+    .inner & {margin-bottom: 22px;}
+    @include basis(33.33333%);
+    flex-grow: 0;
     &_fit {
       margin-bottom: 25px;
     }

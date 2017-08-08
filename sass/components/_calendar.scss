@@ -162,16 +162,12 @@ table.calendar {
 }
 .calendar-detail {
   margin-bottom: 30px;
-  h3 {
-    @include h-line($height: 3px);
-    margin-bottom: 22px;
-  }
   table.calendar {
     font-size: 2.4616em;
   }
 }
 .calendar-filter {
-  margin: 0 0 30px;
+  margin: -15px 0 30px;
   padding: 0;
   list-style: none;
   display: flex;

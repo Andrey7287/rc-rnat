@@ -11,6 +11,9 @@
 }
 .contacts {
   margin-bottom: 65px;
+  h4, .h4 {
+    margin-top: -2px;
+  }
   &__title {
     color: #999;
     margin-top: 15px;

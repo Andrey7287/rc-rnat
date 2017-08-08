@@ -1,0 +1,19 @@
+.tags-filter {
+  @include font(13);
+  .faq & {
+    @include font(16,32);
+  }
+  &__item {
+    display: inline-block;
+    margin-right: 7px;
+    a {
+      text-decoration: none;
+      .act &{
+        color: $red;
+      }
+    }
+    span {
+      color: #999;
+    }
+  }
+}

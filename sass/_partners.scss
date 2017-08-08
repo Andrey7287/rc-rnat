@@ -1,0 +1,18 @@
+.partners {
+  padding: 10px 0 20px;
+  &__item {
+    @include basis(25%);
+    flex-grow: 0;
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 10px 0 20px;
+  }
+}
+.partner {
+  @include img-fit(100%);
+  border: 1px solid $border;
+  margin-top: 13px;
+}

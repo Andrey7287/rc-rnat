@@ -19,6 +19,10 @@
 @import "components/document.list";
 @import "components/social";
 @import "components/link.icon";
+@import "components/tags";
+@import "components/tags.filter";
+@import "components/paging";
+@import "components/colorbox"; 
 
 
 
@@ -35,3 +39,7 @@
 @import "person";
 @import "news.detail";
 @import "contacts";
+@import "event";
+@import "partners";
+@import "gallery";
+@import "faq";

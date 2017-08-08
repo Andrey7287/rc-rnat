@@ -1,0 +1,15 @@
+.paging {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  &__item {
+    flex-grow: 0;
+    a {
+      font-size: 1.25em;
+      &.forward,
+      &.backward {
+        font-size: 0.875em;
+      }
+    }
+  }
+}

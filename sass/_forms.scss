@@ -138,7 +138,6 @@ fieldset {
 
 .cabinet {
 	h3, .h3 {
-		@include h-line($height: 3px);
 		margin-bottom: 38px;
     margin-top: 20px;
 	}
@@ -155,9 +154,6 @@ fieldset {
 }
 .feed-back {
   margin-bottom: 30px;
-  h3 {
-    @include h-line($height: 3px);
-  }
   input {
     margin-bottom: 15px; 
   }

@@ -1,0 +1,6 @@
+.tags {
+  padding-bottom: 35px;
+  &__item {
+    @include font(13);
+  }
+}

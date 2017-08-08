@@ -1,0 +1,66 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['Миссия Ассоциации','Правление','Аппарат','Календарь мероприятий','Контакты','FAQ']
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item
+        h3 Ключевые слова
+        .tags
+          each item in ['Публичность данных','отношений','предполагает','побережье','обеспечено', 'неустойкой']
+            a(href="#").tags__item= item 
+            =', '
+        h3 Поделиться
+        .social
+          each item in [{name:'Отправить по почте',prefix:'em'},{name:'Распечатат',prefix:'pr'},{name:'Вконтакте',prefix:'vk'},{name:'Фэйсбук',prefix:'fb'},{name:'Однокласники',prefix:'ok'},{name:'Твиттер',prefix:'tw'}]
+            a(href="#" class="social__item social__item_"+item.prefix)= item.name
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Об ассоциации  
+            span.breadcrumbs__item  Контакты
+          h1 Название мероприятия в календаре
+          .event
+            header.row
+              .col
+                .event__img
+                  img(src="./images/event.jpg", alt="")
+              .col
+                .event__summary
+                  h3 Информация
+                  .label-light Даты проведения: 
+                  div С 12 августа 2017г.
+                  div по 17 августа 2017г.
+                  .label-light Место проведения:
+                  div Инновационный центр «Сколково»
+                  .label-light Организатор:
+                  div Национальная Ассоциация Трансфера Технологий
+            
+            section
+              h3 Описание мероприятия
+              p Взрыв интуитивно понятен. Сверхпроводник, даже при наличии сильных аттракторов, психологически дегустирует плазменный квант. Ожелезнение, несмотря на то, что есть много бунгало для проживания, вознаграждает вексель. Пульсар жизненно заряжает электрод. Деградация растворяет виновный атом. В условиях электромагнитных помех, неизбежных при полевых измерениях, не всегда можно опредлить, когда именно силовое поле.
+            section
+              h3 Отчёт о мероприятии
+              p Алеаторически выстроенный бесконечный канон с полизеркальной векторно-голосовой структурой, несмотря на внешние воздействия, неизбежен. Политическая коммуникация трансформирует плюралистический целевой сегмент рынка. 
+              p Точность гироскопа, обобщая изложенное, принципиально консолидирует культ личности, размещаясь во всех медиа. В заключении добавлю, политическое учение Фомы Аквинского искажает авторитаризм. Идеология индуцирует культурный культ личности. Гиротахометр неизбежен.
+            footer.row
+              .col
+                h3 Фото
+                .row.photo-line
+                  -var cnt = 1
+                  while cnt < 4
+                    .col.photo-line__item
+                      .photo-thumb
+                        img(src="./images/photo-thumb"+cnt+++".jpg", alt="")
+                a(href="#").forward Связанные фото
+              .col
+                h3 Видео
+                .video
+                  <iframe width="853" height="480" src="https://www.youtube.com/embed/cLcKew4cQq4?rel=0" frameborder="0" allowfullscreen></iframe>
+                a(href="#").forward Связанные видео
+          a(href="#").prev-page Вернуться к списку мероприятий

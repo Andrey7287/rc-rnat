@@ -1,0 +1,48 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['Видео','Отчёты о мероприятиях','Фотогалерея ']
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item
+        h3 Ключевые слова
+        .tags
+          each item in ['Публичность данных','отношений','предполагает','побережье','обеспечено', 'неустойкой']
+            a(href="#").tags__item= item 
+            =', '
+        h3 Поделиться
+        .social
+          each item in [{name:'Отправить по почте',prefix:'em'},{name:'Распечатат',prefix:'pr'},{name:'Вконтакте',prefix:'vk'},{name:'Фэйсбук',prefix:'fb'},{name:'Однокласники',prefix:'ok'},{name:'Твиттер',prefix:'tw'}]
+            a(href="#" class="social__item social__item_"+item.prefix)= item.name
+        h3 Права на изображения
+        small Пульсар жизненно заряжает электрод. Деградация растворяет виновный атом.
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Об ассоциации  
+            span.breadcrumbs__item  Контакты
+          h1 Название мероприятия в календаре
+          .text-content
+            p Взрыв интуитивно понятен. Сверхпроводник, даже при наличии сильных аттракторов, психологически дегустирует плазменный квант. Ожелезнение, несмотря на то, что есть много бунгало для проживания, вознаграждает вексель. Пульсар жизненно заряжает электрод. Деградация растворяет виновный атом. В условиях электромагнитных помех, неизбежных при полевых измерениях, не всегда можно опредлить, когда именно силовое поле.
+          .gallery-list.row
+            -var cnt = 1;
+            while cnt < 10  
+              .gallery-list__item.col
+                a(href="./images/gallery.jpg" rel="gal").lightbox.gallery-thumb
+                  img(src="./images/gallery-thumb.jpg", alt=""+cnt++)
+          .paging.row
+            .paging__item.col
+              a(href="#", title="title").backward Предыдущая
+            .paging__item.col
+              a(href="#", title="title") 1
+            .paging__item.col.act
+              a(href="#", title="title") 2
+            .paging__item.col
+              a(href="#", title="title") 3
+            .paging__item.col
+              a(href="#", title="title").forward Следующая

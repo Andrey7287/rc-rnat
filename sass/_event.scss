@@ -1,0 +1,48 @@
+.event {
+  header {
+    padding-top: 24px;
+    margin-bottom: 40px;
+    .h3, h3 {
+      &:first-of-type {
+        margin-top: -2px;
+      }
+    }
+    .col{
+      &:first-child{
+        @include basis(66.66666%);
+      }
+      &:last-child{
+        @include basis(33.33333%);
+      }
+    }
+  }
+  section {
+    .h3, h3 {
+      &:first-of-type {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  footer {
+    >.col{
+      &:first-child{
+        @include basis(66.66666%);
+      }
+      &:last-child{
+        @include basis(33.33333%);
+      }
+    }
+    .forward {
+      margin-top: 15px;
+      float: right;
+    }
+  }
+}
+.photo-line {
+  &__item {
+    @include basis(33.33333%);
+  }
+  .photo-thumb {
+    @include img-fit(105%);
+  }
+}

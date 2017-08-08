@@ -1,0 +1,48 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['Видео','Отчёты о мероприятиях','Фотогалерея ']
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item
+        h3 Фильтр по ключевому слову
+        .tags-filter
+          .tags-filter__item.act 
+            a(href="#") Технологичность 
+            span (5 фотоальбомов)
+          .tags-filter__reset
+            a(href="#", title="title") Сбросить фильтр
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Медиа
+            span.breadcrumbs__item  Фотогалерея
+          h1 Фотогалерея
+          ul.calendar-filter.years
+            each year, idx in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','...']
+              -var prefix = idx == 2 ? ' act' : ''
+              li(class="calendar-filter__item"+prefix)
+                if  idx < 3 
+                  a(href="#", title="title")= year
+                else
+                  span= year
+          h3 Выбор месяца
+          ul.calendar-filter.calendar-filter
+            each year, idx in ['Январь ','Февраль ','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь ','Октябрь','Ноябрь', 'Декабрь']
+              -var prefix = idx == 5 ? ' act' : ''
+              li(class="calendar-filter__item"+prefix)
+                a(href="#", title="title")= year
+          .news.row
+            each block in [{title:'Бихевиоризм символ теоретический минерал',txt: 'Эпюра, несмотря на внешние воздействия, отражает словесный ксерофитный кустарник, для этого необходим заграничный паспорт, действительный.'},{title: 'Утконос понятен вне нового подхода', txt: 'Политическая культура применяет подпахотный коллапс и это является некими межсловесными отношениями другого типа, природу конкретизировать...'},{title: 'Важно геологическое строение дает гидроузел',txt: 'Не ставя под сомнение возможность разных подходов к почве, парарендзина начинает близкий бугор пучения, где автор является хозяином.'},{title: 'Важно геологическое строение дает гидроузел',txt: 'Не ставя под сомнение возможность разных подходов к почве, парарендзина начинает близкий бугор пучения, где автор является хозяином.'}]
+              .news__item.col
+                .news__img
+                  img(src="./images/gallery-thumb.jpg", alt="")
+                .news__title 
+                  a(href="#", title="title")= block.title
+                  .news__date 15 июня 2017
+                .news__txt= block.txt
