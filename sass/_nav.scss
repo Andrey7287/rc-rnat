@@ -3,9 +3,13 @@ nav {
 	margin-bottom: 17px;
 }
 .site-nav{
+	$lg-gutter: 10px;
 	display: flex;
 	margin: 0 -#{$gutter};
 	justify-content: flex-end;
+	@include mq(lg){
+		margin: 0 -#{$lg-gutter};
+	}
 	&__item {
 		flex: 0;
 		position: relative;
@@ -20,6 +24,9 @@ nav {
 		font-weight: 700;
 		text-decoration: none;
 		text-transform: uppercase;
+		@include mq(lg){
+			padding: 0 $lg-gutter;
+		}
 	}
 	.dropdown {
 		position: absolute;

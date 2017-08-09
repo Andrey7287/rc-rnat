@@ -5,14 +5,10 @@
   &__item {
     flex: 0;
     @include font(0,0);
-    margin-left: 3px;
-    &:first-child {
-      margin-left: 0;
-    }
+    margin-right: 4px;
     &::before {
       content: " ";
       display: inline-block;
-      transition: transform .2s ease-in;
     }
     &_em::before {
       @include sprite($ico-soc_mail);
@@ -34,7 +30,7 @@
     }
     &:hover {
       &::before {
-        transform: translateY(-2px);
+        opacity: 0.9;
       }
     }
   }

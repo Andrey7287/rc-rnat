@@ -9,9 +9,10 @@ block content
             each val in [1,2]
               .slider__item
                 .slider__inner
-                  .slider__title Комбинаторное приращение
-                  p.slider__txt Познание текста, особенно в условиях политической нестабильности, отражает сюжетный парафраз. Зенитное часовое число притягивает биокосный логарифм. 
-                  a(href="#").btn Подробнее
+                  .slider__content-wrapp
+                    .slider__title Комбинаторное приращение
+                    p.slider__txt Познание текста, особенно в условиях политической нестабильности, отражает сюжетный парафраз. Зенитное часовое число притягивает биокосный логарифм. 
+                    a(href="#").btn Подробнее
                 img(src="./images/slider"+val+".jpg", alt="").slider__img
           //button.slider-arrow.js-slider-1-left previos
           //button.slider-arrow.js-slider-1-right next
@@ -23,83 +24,7 @@ block content
         p Регрессия возможна. Эоловое засоление однородно ищет лимнический строфоид. Гировертикаль гасит pадиотелескоп Максвелла. Складчатость и надвигание свидетельствуют о том, что высота приводит каркасный стих. Движение систематически влияет на составляющие гироскопического момента больше, чем устойчивый ортоклаз в соответствии с системой уравнений. Ледниковое озеро, по которому один блок опускается относительно другого, текстологически связывает парагенезис, что связано со смысловыми оттенками, логическим выделением или с синтаксической омонимией. 
         p текстологически связывает парагенезис, что связано со смысловыми оттенками, логическим выделением или с синтаксической омонимией. Эоловое засоление однородно ищет лимнический строфоид. Складчатость и надвигание свидетельствуют о том, что высота приводит каркасный стих. Движение систематически влияет на составляющие гироскопического момента больше, чем устойчивый ортоклаз в соответствии с системой уравнений. 
         a(href="").forward Подробнее
-  .directions
-    .container
-      .directions__title Направления деятельности
-      .directions__inner
-        div(data-wow-duration="2s").directions__item.wow.fadeInUp
-          a.directions__link(href="") коммерциализация<br />РИД
-          svg(width="175" height="249").svg-trungle
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg1
-                image(xlink:href="./images/trungle_1.jpg" width="172" height="246")
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg1grey
-                image(xlink:href="./images/trungle_1grey.jpg" width="172" height="246")
-            //filter#grayscale
-              feColorMatrix(type="matrix" values="0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 0 ")
-            polygon(points="0,0 175,127 3,249").svg-trungle__trungle-bkg
-            polygon(points="0,0 172,124 0,246" fill="url(#svgImg1)" ).svg-trungle__trungle-img
-            polygon(points="0,0 172,124 0,246" fill="url(#svgImg1grey)" ).svg-trungle__trungle-img.svg-trungle__trungle-img_filter
-            line(x1="77" y1="57" x2="77" y2="193").svg-trungle__line
-            line(x1="116" y1="85" x2="0" y2="230").svg-trungle__line
-        div(data-wow-duration="2s" data-wow-delay="0.5s").directions__item.wow.fadeInUp
-          a.directions__link(href="") обзоры
-          svg(width="76" height="107").svg-trungle
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg2
-                image(xlink:href="./images/trungle_2.jpg" width="73" height="104")
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg2grey
-                image(xlink:href="./images/trungle_2grey.jpg" width="73" height="104")
-            polygon(points="0,2 76,56 5,107").svg-trungle__trungle-bkg
-            polygon(points="0,0 73,52 0,104" fill="url(#svgImg2)" ).svg-trungle__trungle-img
-            polygon(points="0,0 73,52 0,104" fill="url(#svgImg2grey)" ).svg-trungle__trungle-img.svg-trungle__trungle-img_filter
-            line(x1="16" y1="10" x2="36" y2="79").svg-trungle__line
-        div(data-wow-duration="2s" data-wow-delay="1s").directions__item.wow.fadeInUp
-          a.directions__link(href="") Формирование <br />суверенных патентных фондов за рубежом
-          svg(width="287" height="415").svg-trungle
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg3
-                image(xlink:href="./images/trungle_3.jpg" width="284" height="412")
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg3red
-                image(xlink:href="./images/trungle_3red.jpg" width="284" height="412")
-            //filter#redscale
-              feColorMatrix(type="matrix" values="3 0 0 3 0 0 1 0 0 0 0 0 1 0 0 0 0 3 1 0")
-            polygon(points="0,207 287,3 287,415").svg-trungle__trungle-bkg
-            polygon(points="0,207 284,0 284,412" fill="url(#svgImg3)").svg-trungle__trungle-img
-            polygon(points="0,207 284,0 284,412" fill="url(#svgImg3red)").svg-trungle__trungle-img.svg-trungle__trungle-img_filter
-            line(x1="221" y1="46" x2="148" y2="315").svg-trungle__line
-        div(data-wow-duration="2s" data-wow-delay="1.5s").directions__item.wow.fadeInUp
-          a.directions__link(href="") экспертиза <br />нормативных документов
-          svg(width="284" height="414").svg-trungle
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg4
-                image(xlink:href="./images/trungle_4.jpg" width="281" height="411")
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg4blue
-                image(xlink:href="./images/trungle_4blue.jpg" width="281" height="411")
-            //filter#bluescale
-              feColorMatrix(type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 1 3 0 0 0 0 1 0")
-            polygon(points="0,0 284,209 3,414").svg-trungle__trungle-bkg
-            polygon(points="0,0 281,206 0,411" fill="url(#svgImg4)").svg-trungle__trungle-img.svg-trungle__trungle-img
-            polygon(points="0,0 281,206 0,411" fill="url(#svgImg4blue)").svg-trungle__trungle-img.svg-trungle__trungle-img_filter
-            line(x1="0" y1="0" x2="190" y2="274").svg-trungle__line
-            line(x1="206" y1="148" x2="0" y2="242").svg-trungle__line
-        div(data-wow-duration="2s" data-wow-delay="2s").directions__item.wow.fadeInUp
-          a.directions__link(href="") подготовка <br />кадров
-          svg(width="123" height="176").svg-trungle
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg5
-                image(xlink:href="./images/trungle_5.jpg" width="120" height="173")
-            defs
-              pattern(width="1" height="1" x="0" y="0")#svgImg5grey
-                image(xlink:href="./images/trungle_5grey.jpg" width="120" height="173")
-            polygon(points="0,0 123,90 0,176").svg-trungle__trungle-bkg
-            polygon(points="0,0 120,87 0,173" fill="url(#svgImg5)").svg-trungle__trungle-img.svg-trungle__trungle-img
-            polygon(points="0,0 120,87 0,173" fill="url(#svgImg5grey)").svg-trungle__trungle-img.svg-trungle__trungle-img_filter
-            line(x1="0" y1="86" x2="91" y2="108").svg-trungle__line
+  include ./includes/directions.pug
   aside.news-block
     .container
       .row

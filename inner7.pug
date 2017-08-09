@@ -15,9 +15,7 @@ block content
             a(href="#").tags__item= item 
             =', '
         h3 Поделиться
-        .social
-          each item in [{name:'Отправить по почте',prefix:'em'},{name:'Распечатат',prefix:'pr'},{name:'Вконтакте',prefix:'vk'},{name:'Фэйсбук',prefix:'fb'},{name:'Однокласники',prefix:'ok'},{name:'Твиттер',prefix:'tw'}]
-            a(href="#" class="social__item social__item_"+item.prefix)= item.name
+        include ./includes/social.pug
       .inner__item.col
         .inner__main
           .breadcrumbs

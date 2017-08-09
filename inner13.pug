@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+  .container
+    .inner.row
+      .inner__item.col
+        ul.left-menu
+          each item, idx in ['Коммерциализация рид','Обзоры','Формирование суверенных патентных фондов за рубежом','Экспертиза нормативных документов','подготовка кадров']
+            -var act = idx ? '' : ' act';
+            li(class="left-menu__item"+act)
+              a(href="#", title=item).left-menu__link= item
+      .inner__item.col
+        .inner__main
+          .breadcrumbs
+            a(href="/" title="Главная").breadcrumbs__item Главная
+            a(href="/about/" title="О компании").breadcrumbs__item Медиа
+            span.breadcrumbs__item  Фотогалерея
+          h1 Направления деятельности
+          .text-content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem hic non, tempore nostrum sed animi excepturi quae alias harum enim. Consectetur dolores tempore omnis ab voluptatem quisquam at maxime dolorum.
+
+          .directions-inner
+            each direct in ['коммерциализация РИД','обзоры','Формирование суверенных патентных фондов за рубежом','экспертиза нормативных документов','подготовка кадров']
+              .directions-inner__item
+                a.directions-inner__link(href="")= direct

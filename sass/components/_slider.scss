@@ -35,6 +35,9 @@ $slider-image-offset: 390px;
 			left: $slider-image-offset;
 			@include sprite($slider-overlay);
 			z-index: 4;
+			@include mq(lg){
+				display: none;
+			}
 		}
 	}
 	&__img {
@@ -42,10 +45,31 @@ $slider-image-offset: 390px;
 		top: 0;
 		z-index: 2;
 		left: $slider-image-offset;
+		@include mq(lg){
+			display: none!important;
+		}
 	}
 	&__inner {
 		padding-top: 160px;
 		width: 360px;
+		@include mq(lg) {
+			padding-top: 0;
+			width: 870px;
+			display: table;
+			height: 100%;
+		}
+	}
+	&__content-wrapp { //for mobile regroup
+		@include mq(lg) {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	&__txt { //adapt styles only
+		@include mq(lg) {
+			max-height: 288px;
+    	overflow: hidden;
+		}
 	}
 	&__title {
 		@include font(36,42,700,$msans);
