@@ -1,8 +1,18 @@
 .news-detail {
+  @include mq(md){
+    display: flex;
+    flex-wrap: wrap;
+  }
   &__img-wrapp {
     width: 456px;
     float: right;
     margin: 22px 0 15px 30px;
+    @include mq(md) {
+      margin: 0;
+      flex:1;
+      flex-grow: 0;
+      @include basis(456px);
+    }
   }
   &__img {
     @include img-fit(66%);
@@ -20,8 +30,18 @@
   .inner__aside {
     float: right;
     clear: both;
+    @include mq(md){
+      flex: 1;
+      order:3;
+      padding-left: 0;
+    }
   }
   &__txt {
     max-width: 652px;
+    @include mq(md) {
+      //clear: both;
+      flex: 1;
+      @include basis(100%);
+    }
   }
 }

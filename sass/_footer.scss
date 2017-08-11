@@ -2,6 +2,9 @@
 	background: url(../images/footer-bkg_left.png) top left no-repeat, url(../images/footer-bkg_right.png) top right no-repeat, #3d484e;
 	padding: 34px 0 18px; 
 	margin-top: 35px;
+	@include mq(lg){
+		background: #3d484e;
+	}
 	.row {
 		flex-wrap: nowrap;
 		@include mq(lg){
@@ -32,6 +35,9 @@
 		.col {
 			flex-grow: 0;
 			padding: 0 10px;
+			@include mq(xs){
+				margin-bottom: 7px;
+			}
 		}
 		a {
 			white-space: nowrap;
@@ -63,12 +69,19 @@
 	margin-bottom: 30px;
 	line-height: 1.25;
 	color: #fff;
+	@include mq(lg) {
+		display: flex;
+	}
+	@include mq(sm) {
+		display: block;
+	}
 	&__item {
 		color: inherit;
 		text-align: right;
 		margin-bottom: 10px;
 		@include mq(lg) {
 			text-align: left;
+			flex: 1;
 		}
 		a {
 			color: inherit;

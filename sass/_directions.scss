@@ -43,6 +43,9 @@
       transform: none;
       margin: 40px 0;
     }
+    @include mq(xs){
+       @include font(34,36,300,$msans);
+    }
   }
   &__item {
     position: absolute;

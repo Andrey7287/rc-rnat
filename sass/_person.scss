@@ -1,7 +1,13 @@
 .personlist {
  &__item {
    @include basis(33.33333%);
-   
+   flex-grow: 0;
+   @include mq(md) {
+     @include basis(50%);
+   }
+   @include mq(sm) {
+     @include basis(100%);
+   }
  } 
 }
 .person {
@@ -12,6 +18,13 @@
     border: 1px solid $border;
     margin-bottom: 10px;
     @include img-fit(348px);
+    @include mq(md){
+      border: 0;
+      img {
+        left: 0;
+        transform: translate(0, -50%);
+      }
+    }
   }
   &__name {
     font-weight: 700;

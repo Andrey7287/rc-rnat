@@ -15,7 +15,7 @@ nav {
 		margin: 0;
 		display: block;
 		position: absolute;
-		top: 0;
+		top: 44px;
 		right: 0;
 		z-index: 1;
 		background: #fff;
@@ -23,10 +23,13 @@ nav {
 		transform-origin: top right;
 		transition: transform .2s ease-in;
 		text-align: right;
-		border: 1px solid $blue;
 		&.act {
 			transform: scale(1);
 		}
+	}
+	@include mq(xs){
+		width: 100%;
+		font-size: 0.9em;
 	}
 	&__item {
 		flex: 0;
@@ -46,9 +49,10 @@ nav {
 			padding: 0 $lg-gutter;
 		}
 		@include mq(md) {
-			padding: 1px 35px;
+			padding: 7px 15px;
 			display: block;
-			border-bottom: 2px solid $blue;
+			background: lighten($blue, 44%);
+			border-bottom: 1px solid #fff;
 		}
 	}
 }
@@ -70,6 +74,9 @@ nav {
 			display: block;
 		}
 	}
+	@include mq(xs){
+		font-size: 0.95em;
+	}
 	&__item{
 		text-align: right;
 		&:first-child {
@@ -90,8 +97,9 @@ nav {
 		white-space: nowrap;
 		border-bottom: 1px solid $blue;
 		@include mq(md) {
-			padding-right: 35px;
+			padding: 5px 15px 5px 5px;
 		}
+
 	}
 }
 
@@ -99,6 +107,26 @@ nav {
 	margin: 0 0 55px;
 	padding: 0;
 	list-style: none;
+	@include mq(lg){
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -#{$gutter};
+		margin-right: -#{$gutter};
+	}
+	&__item {
+		@include mq(lg) {
+			@include basis(25%);
+			flex-grow: 0;
+			padding: $gutter;	
+		}
+		@include mq(md) {
+			@include basis(33%);
+		}
+		@include mq(sm) {
+			@include basis(100%);
+			max-width: 291px;
+		}
+	}
 	&__link {
 		display: block;
 		padding: 18px 0;
@@ -109,5 +137,19 @@ nav {
 		text-transform: uppercase;
 		font-family: $msans;
 		font-weight: 700;
+		@include mq(lg) {
+			border-bottom: 0;
+			display: inline-flex;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			border: 1px solid $border;
+			padding: 18px;
+			&:hover,
+			.act & {
+				border: 1px solid $blue;
+			}
+		}
 	}
 }

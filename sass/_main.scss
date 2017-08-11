@@ -25,11 +25,11 @@ h2, .h2 {
 	@include h-line;
 	@include mq(sm){
 		@include font(30,32,300,$header-font);
-		margin: 18px 0;
+		margin-top: 18px;
 	}
 	@include mq(xs){
 		@include font(26,28,300,$header-font);
-		margin: 15px 0;
+		margin-top: 15px;
 	}
 }
 h3, .h3 {
@@ -39,7 +39,7 @@ h3, .h3 {
 	@include h-line(left, 67px, 3px);
 	@include mq(sm){
 		@include font(22,26,300,$header-font);
-		margin: 8px 0;
+		margin-top: 8px;
 	}
 }
 h4, .h4 {

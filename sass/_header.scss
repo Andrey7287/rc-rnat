@@ -12,7 +12,7 @@
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.25);
     margin: 0;
     @include mq(xs){
-      top: 40px;
+      top: 41px;
     }
   }
   .row {
@@ -24,8 +24,10 @@
     margin: 7px 0;
     @include mq(sm){
       font-size: 0.9em;
+      margin: 9px 0;
     }
     @include mq(xs){
+      margin: 6px 0;
       .link-icon {
         text-indent: -9999px;
       }
@@ -90,6 +92,9 @@
     .mob-open & {
       padding: 7px 30px 7px 10px;
       width: 100%;
+      @include mq(xs) {
+        padding: 6px 30px 5px 10px;
+      }
     }
   }
   &__submit {

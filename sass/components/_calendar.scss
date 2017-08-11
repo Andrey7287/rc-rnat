@@ -5,12 +5,22 @@
 table.calendar {
   table-layout: fixed;
   width: 100%;
+  @include mq(sm){
+    display: block;
+  }
   thead {
     @include font(20,22,300,$msans);
     color: #fff;
     text-transform: uppercase;
     background: $blue;
     border: 1px solid $border;
+    @include mq(sm){
+      display: block;
+      tr {
+        display: table;
+        width: 100%;
+      }
+    }
     .calendar-detail & {
        @include font(13);
     }
@@ -55,29 +65,39 @@ table.calendar {
           }
         }
       }
-      // border: 1px solid transparent;
-      // transition: all .2s ease-in;
-      // &::before {
-      //   content: " ";
-      //   display: block;
-      //   border-top: 15px solid transparent;
-      //   border-bottom: 15px solid transparent;
-      // }
-      // &.left::before {
-      //   border-right: 20px solid $border;
-      // }
-      // &.right::before {
-      //   border-left: 20px solid $border;
-      // }
-      // &:hover {
-      //   border: 1px solid $border;
-      // }
     }
   }
   tbody {
+    @include mq(sm){
+      display: block;
+      tr{
+        display: block;
+      }
+    }
     td {
       border: 1px solid $border;
       position: relative;
+      @include mq(sm){
+        display: flex;
+        border: 0;
+        border-bottom: 1px solid #fff;
+        &>a {
+          flex: 1;
+          flex-grow: 0;
+          @include basis(70px);
+          padding: 0;
+          background: #eef1f5;
+          &::after {
+            display: none;
+          }
+          &::before {
+            top: 0;
+          }
+        }
+        .event {
+          flex: 1;
+        }
+      }
       &>span, &>a {
         display: block;
         padding: 5px 1px;
@@ -89,6 +109,9 @@ table.calendar {
         z-index: 2;
         .calendar-detail & {
           padding: 28px 1px;
+          @include mq(md){
+            padding: 17px 1px;
+          }
         }
         &.inact {
           color: #ccc;
@@ -110,15 +133,17 @@ table.calendar {
           }
           &:hover,
           &:focus {
-            color: #fff;
-            background: $blue;
-            &::after {
-              border-right: 10px solid #fff
-            }
-            &~.event {
-              opacity: 1;
-              z-index: 3;
-              left: 0;
+            @media (min-width: 768px){
+              color: #fff;
+              background: $blue;
+              &::after {
+                border-right: 10px solid #fff
+              }
+              &~.event {
+                opacity: 1;
+                z-index: 3;
+                left: 0;
+              }
             }
           }
         }
@@ -126,6 +151,9 @@ table.calendar {
           background: #eef1f5;
           border: 1px solid $red;
           color: $red;
+          @include mq(sm) {
+            border: 0;
+          }
           .calendar-detail &:before {
             content: "сегодня";
             color: #abb1b9;
@@ -136,6 +164,11 @@ table.calendar {
             left: 50%;
             transform: translateX(-50%);
           }
+        }
+      }
+      &>span{
+        @include mq(sm){
+          display: none;
         }
       }
     }
@@ -153,6 +186,14 @@ table.calendar {
     opacity: 0;
     z-index: -3;
     transition: opacity .2s ease-in;
+    @include mq(sm){
+      position: static;
+      width: auto;
+      transform: none;
+      opacity: 1;
+      border: 0;
+      z-index: 1;
+    }
     &__title {
       a {
         color: #006a91;
@@ -191,6 +232,12 @@ table.calendar {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  @include mq(sm){
+    display: block;
+    height: 88px;
+    width: 100px;
+    overflow-Y: scroll;
+  }
   &__item {
     flex: 0;
     a,span {
