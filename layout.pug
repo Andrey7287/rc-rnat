@@ -15,7 +15,7 @@ html
           .row
             a(href="/", title="Логотип").col.top__item.site-logo 
               picture
-                source(srcset="./images/site-logo_s.svg" media="(max-width: 768px)")
+                source(srcset="./images/site-logo_s.svg" media="(max-width: 576px)")
                 source(srcset="./images/site-logo_m.svg" media="(max-width: 1200px)")
                 img(src="./images/site-logo.svg" alt="Логотип рус-нат")
             .col.top__item
@@ -73,7 +73,17 @@ html
             },
             1: {
               href: '/inner2.html',
-              title: 'Медиа'
+              title: 'Медиа',
+              sub: {
+                0: {
+                  href: '#',
+                  title: 'Медия пункт'
+                },
+                1: {
+                  href: '#',
+                  title: 'Медия пункт 2'
+                }
+              }
             },     
             2: {
               href: '/inner3.html',

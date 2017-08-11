@@ -1,11 +1,18 @@
 .news-block {
   padding: 35px 0;
   &__item {
+    flex-grow: 0;
     &:first-child {
-      @include basis(75%);
+      @include basis(calc(100% - 293px));
+      @include mq(sm){
+        @include basis(100%);
+      }
     }
     &:last-child {
-      @include basis(25%);
+      @include basis(293px);
+      @include mq(sm){
+        @include basis(100%);
+      }
     }
   }
 }

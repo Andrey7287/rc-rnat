@@ -18,7 +18,7 @@ import customSelect from 'custom-select';
 new WOW().init();
 customSelect('select');
 /* Define project components and variables */
-var	mobileView = window.matchMedia("(max-width: 768px)").matches,
+var	mobileView = window.matchMedia("(max-width: 992px)").matches,
 		resizeAlign = new OnResize(),
 		scrollTiming = 0;
 
@@ -29,27 +29,64 @@ $('.lightbox').colorbox({
 	height:'85%'
 });
 
+var $searchBtn = $('.search__submit'),
+		$searchForm = $searchBtn.closest('form'),
+		$searchInput = $searchForm.find('.search__input'),
+		$searchContainer = $searchBtn.closest('.top__item');
 
-/*********************************
-****** Menu expand on focus ******
-**********************************/
-$('.dropdown__link').focusin(function(){
-	$(this).closest('.dropdown').css('transform', 'scale(1)');
+$searchInput.focusin(function () {
+	$searchContainer.addClass('with-bkg');
+	if ( mobileView ) {
+		$searchContainer.addClass('mob-open');
+	}
 });
-$('.dropdown__link').focusout(function(){
-	$(this).closest('.dropdown').css('transform', 'scale(0)');
+$searchInput.focusout(function (e) {
+	if ( e.relatedTarget !== $searchBtn[0] ) {
+		$searchContainer.removeClass('mob-open');
+		$searchContainer.removeClass('with-bkg');
+	}
+});
+$searchBtn.focusout(function(){
+	$searchContainer.removeClass('mob-open');
+	$searchContainer.removeClass('with-bkg');
 });
 
+if ( mobileView ) {
 /************************
 ****** Mobile menu ******
 *************************/
 
-$('.c-hamburger').on('click', function(){
-	$(this).toggleClass('is-active');
-	//$('.site-nav').slideToggle();
-	$('.site-nav').toggleClass('act');
-});
+	$('.c-hamburger').on('click', function(){
+		$(this).toggleClass('is-active');
+		//$('.site-nav').slideToggle();
+		$('.site-nav').toggleClass('act');
+	});
 
+/**************************
+****** Mobile search ******
+***************************/
+
+	$searchBtn.click(function (e) {
+		e.preventDefault();
+
+		if ( $searchContainer.hasClass('mob-open') ) $searchForm.submit();
+
+		$searchContainer.addClass('mob-open');
+		$searchInput.focus();
+	});
+
+} else {
+/*********************************
+****** Menu expand on focus ******
+**********************************/
+
+	$('.dropdown__link').focusin(function(){
+		$(this).closest('.dropdown').css('transform', 'scale(1)');
+	});
+	$('.dropdown__link').focusout(function(){
+		$(this).closest('.dropdown').css('transform', 'scale(0)');
+	});
+}
 
 /***********************
 ******** SLIDER ********

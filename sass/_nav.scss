@@ -1,6 +1,7 @@
 nav {
 	height: 27px;
 	margin-bottom: 17px;
+	position: relative;
 }
 .site-nav{
 	$lg-gutter: 10px;
@@ -9,6 +10,23 @@ nav {
 	justify-content: flex-end;
 	@include mq(lg){
 		margin: 0 -#{$lg-gutter};
+	}
+	@include mq(md){
+		margin: 0;
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+		background: #fff;
+		transform: scale(0);
+		transform-origin: top right;
+		transition: transform .2s ease-in;
+		text-align: right;
+		border: 1px solid $blue;
+		&.act {
+			transform: scale(1);
+		}
 	}
 	&__item {
 		flex: 0;
@@ -27,32 +45,52 @@ nav {
 		@include mq(lg){
 			padding: 0 $lg-gutter;
 		}
+		@include mq(md) {
+			padding: 1px 35px;
+			display: block;
+			border-bottom: 2px solid $blue;
+		}
 	}
-	.dropdown {
-		position: absolute;
-		top: 27px;
-		right: 0;
-		transform: scale(0);
-		transition: transform .2s ease-in;
-		transform-origin: top right;
-		z-index: 30;
-		background: #fff;
-		&__item{
-			text-align: right;
-			&:first-child {
-				margin-top: 17px;
+}
+
+.dropdown {
+	position: absolute;
+	top: 27px;
+	right: 0;
+	transform: scale(0);
+	transition: transform .2s ease-in;
+	transform-origin: top right;
+	z-index: 30;
+	background: #fff;
+	@include mq(md){
+		position: static;
+		transform: scale(1);
+		display: none;
+		li.act & {
+			display: block;
+		}
+	}
+	&__item{
+		text-align: right;
+		&:first-child {
+			margin-top: 17px;
+			@include mq(md){
+				margin-top: 0px;
 			}
 		}
-		&__link {
-			text-decoration: none;
-			display: inline-block;
-			font-family: $msans;
-			font-weight: 500;
-			text-transform: uppercase;
-			width: 100%;
-			padding: 3px 14px;
-			white-space: nowrap;
-			border-bottom: 1px solid $blue;
+	}
+	&__link {
+		text-decoration: none;
+		display: inline-block;
+		font-family: $msans;
+		font-weight: 500;
+		text-transform: uppercase;
+		width: 100%;
+		padding: 3px 14px;
+		white-space: nowrap;
+		border-bottom: 1px solid $blue;
+		@include mq(md) {
+			padding-right: 35px;
 		}
 	}
 }

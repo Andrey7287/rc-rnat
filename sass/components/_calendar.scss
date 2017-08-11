@@ -15,6 +15,7 @@ table.calendar {
        @include font(13);
     }
     th {
+      vertical-align: middle;
       .calendar-detail & {
         padding: 15px 0px;
       }
@@ -22,11 +23,13 @@ table.calendar {
     b {
       font-weight: 700;
     }
-    button {
+    .left,
+    .right {
       text-indent: -9999px;
       margin: 5px auto;
       @include font(0,0);
       display: block;
+      width: 34px;
       .triangle {
         display: block;
         transform: scale(0.6);
@@ -75,7 +78,7 @@ table.calendar {
     td {
       border: 1px solid $border;
       position: relative;
-      span, a {
+      &>span, &>a {
         display: block;
         padding: 5px 1px;
         width: 100%;
@@ -115,15 +118,15 @@ table.calendar {
             &~.event {
               opacity: 1;
               z-index: 3;
+              left: 0;
             }
           }
-
         }
         &.today {
           background: #eef1f5;
           border: 1px solid $red;
           color: $red;
-          .calendar-detail &:after {
+          .calendar-detail &:before {
             content: "сегодня";
             color: #abb1b9;
             font-weight: 700;
@@ -144,19 +147,35 @@ table.calendar {
     font-size: 0.40635em;
     position: absolute;
     top:0;
-    left: 0;
-    width: 200%;
+    left: -9999px;
+    width: 250%;
     transform: translate(-25%, -100%);
     opacity: 0;
-    z-index: 1;
+    z-index: -3;
     transition: opacity .2s ease-in;
     &__title {
-      color: #006a91;
-      line-height: 1.125;
+      a {
+        color: #006a91;
+        line-height: 1.125;
+        text-decoration: none;
+        @include font(16,18);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
     &__date {
       color: #333;
-      @include font(12,28)
+      @include font(12,18);
+      margin-bottom: 12px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &:hover {
+      opacity: 1;
+      z-index: 3;
+      left: 0;
     }
   }
 }

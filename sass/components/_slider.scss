@@ -8,6 +8,12 @@
 		height: 529px;
 		background: url(../images/slider-bkg.png) 50% 0 no-repeat;
 		overflow: hidden;
+		@include mq(md) {
+			height: 500px;
+		}
+		@include mq(sm) {
+			height: 470px;
+		}
 		.container {
 			height: 100%;
 		}
@@ -27,6 +33,12 @@ $slider-image-offset: 390px;
 	&__item {
 		position: relative;
 		height: 529px;
+		@include mq(md) {
+			height: 500px;
+		}
+		@include mq(sm) {
+			height: 470px;
+		}
 		&::before {
 			content: " ";
 			display: block;
@@ -58,6 +70,17 @@ $slider-image-offset: 390px;
 			display: table;
 			height: 100%;
 		}
+		@include mq(md) {
+			width: 720px;
+			font-size: 0.95em;
+		}
+		@include mq(sm) {
+			width: 528px;
+		}
+		@include mq(xs) {
+			width: calc(100vw - 46px);
+			font-size: 0.9em;
+		}
 	}
 	&__content-wrapp { //for mobile regroup
 		@include mq(lg) {
@@ -74,6 +97,9 @@ $slider-image-offset: 390px;
 	&__title {
 		@include font(36,42,700,$msans);
 		text-transform: uppercase;
+		@include mq(xs){
+			@include font(32,36,700,$msans);
+		}
 	}
 	.btn {
 		margin-top: 20px;

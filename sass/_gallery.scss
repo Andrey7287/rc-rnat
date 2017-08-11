@@ -3,6 +3,7 @@
     @include basis(33.33333%);
     padding-top: $gutter;
     padding-bottom: $gutter;
+    flex-grow: 0;
   }
 }
 .gallery-thumb {

@@ -117,6 +117,9 @@ fieldset {
 }
 .subscribe {
 	display: flex;
+	@include mq(lg) {
+		margin-bottom: 25px;
+	}
 	&__item {
 		flex: 0;
 		&:first-child {

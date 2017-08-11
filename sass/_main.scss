@@ -8,13 +8,14 @@ h1, .h1 {
 	.inner &:first-of-type {
 		margin-bottom: 56px;
 	}
-	@include mq(sm){
+	@include mq(md){
 		@include font(34,38,300,$header-font);
-		margin: 18px 0;
+	}
+	@include mq(md){
+		@include font(32,36,300,$header-font);
 	}
 	@include mq(xs){
 		@include font(30,36,300,$header-font);
-		margin: 15px 0;
 	}
 }
 h2, .h2 {

@@ -2,19 +2,26 @@ table.calendar
   thead
     tr
       th(colspan='2') 
-        button.left предыдущий
+        a(href="").left предыдущий
           svg(width="34" height="50").triangle
             polygon(points="0,25 34,0 34,50").triangle__item
       th(colspan='3')
         span #[b Июнь] 2017
       th(colspan='2')
-        button.right следующий
+        a(href="").right следующий
           svg(width="34" height="50").triangle
               polygon(points="0,0 34,25 0,50").triangle__item
   tbody
     tr
       td
-        span.inact 29
+        a(href="").act.today 29
+        .event
+          .event__title
+            a(href="/ob-assotsiatsii/kalendar-meropriyatiy/but-i-must-explain-to-you-how/") эвент 2
+          .event__date 31.07.2017 10:00:00 – 06.08.2017 18:00:00
+          .event__title
+            a(href="/ob-assotsiatsii/kalendar-meropriyatiy/but-i-must-explain-to-you-how/") эвент 2
+          .event__date 31.07.2017 10:00:00 – 06.08.2017 18:00:00
       td
         span.inact 30
       td

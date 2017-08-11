@@ -1,6 +1,5 @@
 .top {
   background: linear-gradient(to right, #d5dbe0 0%, #f0f5fa 50%, #d5dbe0 100%);
-  
   .container {
     position: relative;
   }
@@ -12,6 +11,9 @@
     z-index: 20;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.25);
     margin: 0;
+    @include mq(xs){
+      top: 40px;
+    }
   }
   .row {
     justify-content: flex-end;
@@ -20,28 +22,84 @@
     flex-grow: 0;
     white-space: nowrap;
     margin: 7px 0;
-  }
-  .search {
-    padding: 0 5px;
-    ::placeholder {
-      color: #a1b6c6;
+    @include mq(sm){
+      font-size: 0.9em;
     }
+    @include mq(xs){
+      .link-icon {
+        text-indent: -9999px;
+      }
+    }
+    &:first-of-type { // search container
+      &.mob-open {
+        position: absolute;
+        top: 2px;
+        left: 163px;
+        right: $gutter;
+        z-index: 100;
+        margin: 0;
+        padding: 0;
+        @include mq(xs){
+          left: $gutter;
+        }
+      }
+
+    }
+  }
+}
+.search {
+  padding: 0 5px;
+  .mob-open & {
+    padding: 0;
+  }
+  .with-bkg & {
+    background: #fff;
+  }
+  ::placeholder {
+    color: #a1b6c6;
+  }
+  @media (min-width: 993px){
     &:hover {
       background: #fff;
       .search__input {
         width: 340px;
         padding: 0 10px; 
+        @include mq(lg) {
+          width: 320px;
+        } 
       }
     }
-    &__input {
-      width: 0;
-      padding: 0;
-      border: 0;
-      transition: all .2s ease-in;
-      outline: none;
+  }
+  &__input {
+    width: 0;
+    padding: 0;
+    border: 0;
+    //transition: all .2s ease-in;
+    outline: none;
+    @media (min-width: 993px) {
       &:focus {
         width: 340px;
         padding: 0 10px;
+      }
+    }
+    @include mq(lg) {
+      &:focus {
+        width: 320px;
+      }
+    }
+    .mob-open & {
+      padding: 7px 30px 7px 10px;
+      width: 100%;
+    }
+  }
+  &__submit {
+    @include mq(md){
+      .mob-open & {
+        text-indent: -9999px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5px;
       }
     }
   }

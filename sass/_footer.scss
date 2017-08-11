@@ -4,13 +4,23 @@
 	margin-top: 35px;
 	.row {
 		flex-wrap: nowrap;
+		@include mq(lg){
+			flex-wrap: wrap;
+		}
 	}
 	&__item {
 		&:first-child{
 			@include basis(66.66666%);				
+			@include mq(lg){
+				order: 2;
+				@include basis(100%);	
+			}
 		}
 		&:last-child{
-			@include basis(33.33333%);				
+			@include basis(33.33333%);
+			@include mq(lg){
+				@include basis(100%);
+			}		
 		}
 	}
 	&__nav,
@@ -45,6 +55,9 @@
 			text-decoration: none;
 		}
 	}
+	&__nav {
+		
+	}
 }
 .bottom-contacts {
 	margin-bottom: 30px;
@@ -54,6 +67,9 @@
 		color: inherit;
 		text-align: right;
 		margin-bottom: 10px;
+		@include mq(lg) {
+			text-align: left;
+		}
 		a {
 			color: inherit;
 			text-decoration: none;
